@@ -15,10 +15,15 @@ const caveat = Caveat({
 })
 
 export const metadata: Metadata = {
-  title: 'Enya Song — Product Designer',
+  title: 'Enya Song Portfolio',
   description:
-    'Portfolio of Enya Song, a product designer who designs clarity in complexity. Specializing in product design, systems thinking, and UX strategy.',
+    'Portfolio of Enya Song, a product designer.',
   generator: 'v0.app',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 }
 
 export default function RootLayout({

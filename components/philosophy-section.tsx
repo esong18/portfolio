@@ -63,7 +63,7 @@ export function PhilosophySection() {
 
         {/* Right: side note */}
         <p className="hidden md:block mb-10 text-sm text-muted-foreground max-w-xs text-right leading-relaxed">
-          Reflections on how I approach design — balancing curiosity, clarity, and intentionality.
+          How I approach design — balancing curiosity, clarity, and intentionality.
         </p>
       </div>
 

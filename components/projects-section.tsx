@@ -70,7 +70,7 @@ export function ProjectsSection() {
           </h2>
         </div>
         <p className="hidden md:block text-sm text-muted-foreground max-w-xs text-right leading-relaxed">
-          A curated set of work that reflects how I think, solve, and design.
+          Projects that reflect how I think, solve, and design.
         </p>
       </div>
 

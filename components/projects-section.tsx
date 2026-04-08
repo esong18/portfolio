@@ -22,7 +22,7 @@ const projects = [
     tags: ['Design Systems', 'Web', 'Figma Make'],
     image: '/projects/Skincare/skincover.png',
     year: '2025',
-    note: 'AI prototyping',
+    note: 'intro to AI prototyping',
     slug: 'skin-analysis',
   },
   {

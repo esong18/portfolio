@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     'Portfolio of Enya Song, a product designer.',
   generator: 'v0.app',
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/portfoliofavicon.png',
+    shortcut: '/portfoliofavicon.png',
+    apple: '/portfoliofavicon.png',
   },
 }
 

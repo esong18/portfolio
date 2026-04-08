@@ -101,7 +101,7 @@ const players: Player[] = [
     trait: "The anchor",
     clutch: "100%",
     color: "#185FA5",
-    report: "The franchise player. Built different. Been here since day one. When she's off, the whole team suffers. Non-negotiable starting spot. Forever.",
+    report: "The franchise player. Built different. Been here since day one. When she's off, the whole team suffers. Non-negotiable starting spot.",
     icon: (
       <svg className="s5-drink-icon mx-auto mb-2" width="34" height="38" viewBox="0 0 36 40">
         <rect x="4" y="14" width="22" height="20" rx="4" fill="#E6F1FB" stroke="#378ADD" strokeWidth="1.5"/>

@@ -22,11 +22,11 @@ const projects = [
     tags: ['Design Systems', 'Web', 'Figma Make'],
     image: '/projects/Skincare/skincover.png',
     year: '2025',
-    note: 'intro to AI prototyping',
+    note: 'AI prototyping',
     slug: 'skin-analysis',
   },
   {
-    title: 'AI Quiz Generator',
+    title: 'Medical AI Quiz Generator',
     description:
       'Assist faculty members with creating quiz questions through AI generation.',
     tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],

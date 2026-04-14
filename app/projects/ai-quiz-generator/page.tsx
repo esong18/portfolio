@@ -201,7 +201,7 @@ export default function HudlCasePage() {
                 Quiz Question Generator
               </h2>
               <p className="text-base mb-10 md:text-lg text-foreground/70 max-w-2xl mx-auto">
-                An AI-generated quiz platform that automates question generation to reduce workload.
+                An AI-generated quiz platform that automates question generation to reduce workload for medical faculty.
               </p>
             </motion.div>
           }

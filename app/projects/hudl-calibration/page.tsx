@@ -104,7 +104,7 @@ function ProcessSection() {
             {/* Step marker & content */}
             <div className={`md:col-span-1 ${idx % 2 === 1 ? 'md:order-2' : 'md:order-1'}`}>
               <div className="flex gap-4 md:flex-col">
-                <div className="shrink-0">
+                <div className="shrink-0 -ml-6 md:ml-0">
                   <div
                     className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${activeStep >= idx
                       ? 'bg-accent text-primary-foreground shadow-lg scale-110'
@@ -142,7 +142,7 @@ function ProcessSection() {
 
             {/* Image */}
             <div className={`md:col-span-1 ${idx % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
-              <div className="relative w-full h-64 md:h-80">
+              <div className="relative w-full h-64 md:h-80 ml-12 md:ml-0">
                 <Image
                   src={step.image}
                   alt={step.title}
@@ -221,7 +221,7 @@ export default function HudlCasePage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4">mobile design</p>
+              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">mobile design</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
                 A New Calibration Experience
               </h2>

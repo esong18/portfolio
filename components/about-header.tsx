@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export function AboutHeader() {
   return (
     <section className="relative px-6 md:px-12 pt-32 pb-10 md:pt-36 md:pb-14 max-w-6xl mx-auto">
@@ -45,11 +47,15 @@ export function AboutHeader() {
             width: '260px',
           }}
         >
-          <img
-            src="/Enya%20picture.jpg"
+          <Image
+            src="/Enya picture.jpg"
             alt="Portrait of Enya"
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
             style={{ objectPosition: 'center 70%' }}
+            quality={100}
+            priority
+            sizes="260px"
           />
         </div>
       </div>

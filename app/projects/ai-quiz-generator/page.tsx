@@ -90,7 +90,7 @@ function ProcessSection() {
             <div className={`md:col-span-1 ${idx % 2 === 1 ? 'md:order-2' : 'md:order-1'}`}>
               <div className="flex gap-4 md:flex-col">
                 {/* Circular step indicator */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 -ml-6 md:ml-0">
                   <div
                     className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${activeStep >= idx
                       ? 'bg-accent text-primary-foreground shadow-lg scale-110'
@@ -196,7 +196,7 @@ export default function HudlCasePage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4">web design / proof of technology</p>
+              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">web design / proof of technology</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
                 Quiz Question Generator
               </h2>
@@ -206,13 +206,14 @@ export default function HudlCasePage() {
             </motion.div>
           }
         >
-          <div className="w-full h-full bg-gradient-to-br from-secondary/50 to-background rounded-2xl flex items-center justify-center">
-            <div className="w-full h-full relative rounded-xl overflow-hidden flex items-center justify-center bg-foreground/5 p-4 md:p-8">
+          <div className="w-full h-auto bg-gradient-to-br from-secondary/50 to-background rounded-2xl">
+            <div className="w-full h-auto relative rounded-xl overflow-hidden bg-foreground/5">
               <Image
                 src="/projects/aiquiz/quizcover.png"
                 alt="AI quiz platform"
-                fill
-                className="object-cover object-top rounded-lg"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-lg"
                 priority
               />
             </div>
@@ -422,12 +423,12 @@ export default function HudlCasePage() {
             <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
               Student Experience
             </h3>
-            <div className="relative w-full h-96 md:h-[500px] rounded-lg overflow-hidden">
+            <div className="relative w-full h-64 md:h-[500px] rounded-lg overflow-hidden bg-secondary/30">
               <Image
                 src="/projects/aiquiz/student.png"
                 alt="Student quiz screen"
                 fill
-                className="object-cover object-top"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 900px"
               />
             </div>

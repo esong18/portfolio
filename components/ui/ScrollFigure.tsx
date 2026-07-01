@@ -271,7 +271,9 @@ const CLEAN_NO_PEN = CLEAN.filter((_, i) => i !== 9 && i !== 10);
 // ---------------------------------------------------------------------------
 export function ScrollFigure() {
   const heroRef   = useRef<HTMLDivElement>(null);
-  const figureSvgRef = useRef<SVGSVGElement>(null);
+  // Callback ref so it works for whichever SVG is mounted (mobile or desktop)
+  const figureSvgRef = useRef<SVGSVGElement | null>(null);
+  const setSvgRef = (el: SVGSVGElement | null) => { figureSvgRef.current = el; };
   const [t, setT] = useState(0);
   const [vh, setVh] = useState(600);
   // penTarget holds the live viewport rect of #selected-work, plus the
@@ -367,11 +369,11 @@ export function ScrollFigure() {
     <section ref={heroRef} className="relative h-[200vh]">
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
 
-        <div className="relative flex w-full max-w-5xl items-center justify-center px-8">
-          {/* Figure — pen paths rendered inside during phase 1, hidden during phase 2 */}
-          <div style={{ transform: `translateX(${figureX}vw)`, flexShrink: 0 }}>
+        {/* ── Mobile layout: figure above, text below ── */}
+        <div className="flex md:hidden flex-col items-center justify-center w-full px-6 gap-6">
+          <div style={{ flexShrink: 0 }}>
             <svg
-              ref={figureSvgRef}
+              ref={setSvgRef}
               viewBox="0 0 448 465.914"
               style={{ width: svgSize, maxWidth: "90vw" }}
               fill="none"
@@ -390,7 +392,53 @@ export function ScrollFigure() {
                     <path d={s.d} stroke={s.color} strokeWidth={s.sw} />
                   </g>
                 ))}
-                {/* Pen paths rendered in-figure during phase 1 — perfect alignment */}
+                {!isFalling && PEN_PATHS.map((s, i) => (
+                  <g key={i} transform={`translate(${s.tx}, ${s.ty})`}>
+                    <path d={s.d} stroke={BLUE} strokeWidth={s.sw} />
+                  </g>
+                ))}
+              </g>
+            </svg>
+          </div>
+          <div
+            className="pointer-events-none text-center"
+            style={{ opacity: headlineOpacity }}
+          >
+            <h1 className="font-bold text-balance text-4xl leading-[1.1] text-foreground sm:text-5xl">
+              Hi! I&apos;m <span style={{ textDecoration: 'underline', textDecorationStyle: 'wavy', textDecorationColor: 'oklch(0.62 0.1 230 / 0.35)', textUnderlineOffset: '4px', textDecorationThickness: '1px' }}>Enya</span>.{" "}
+              <span className="block">
+                I design <em className="not-italic text-accent">clarity</em> in complexity.
+              </span>
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+              Currently working on <WhiteboardWord />
+            </p>
+          </div>
+        </div>
+
+        {/* ── Desktop layout: figure left, text right (original) ── */}
+        <div className="hidden md:flex relative w-full max-w-5xl items-center justify-center px-8">
+          <div style={{ transform: `translateX(${figureX}vw)`, flexShrink: 0 }}>
+            <svg
+              ref={setSvgRef}
+              viewBox="0 0 448 465.914"
+              style={{ width: svgSize, maxWidth: "90vw" }}
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <g opacity={1 - e}>
+                {MESSY.map((s, i) => (
+                  <path key={i} d={s.d} stroke={s.color} strokeWidth={s.sw} />
+                ))}
+              </g>
+              <g opacity={e}>
+                {CLEAN_NO_PEN.map((s, i) => (
+                  <g key={i} transform={`translate(${s.tx}, ${s.ty})`}>
+                    <path d={s.d} stroke={s.color} strokeWidth={s.sw} />
+                  </g>
+                ))}
                 {!isFalling && PEN_PATHS.map((s, i) => (
                   <g key={i} transform={`translate(${s.tx}, ${s.ty})`}>
                     <path d={s.d} stroke={BLUE} strokeWidth={s.sw} />

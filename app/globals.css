@@ -29,6 +29,11 @@
   --hero-blob-1: oklch(0.78 0.08 225 / 0.25);
   --hero-blob-2: oklch(0.88 0.05 200 / 0.2);
   --card-hover-shadow: 0 12px 40px oklch(0.62 0.1 230 / 0.12);
+
+  /* Ink scale for ScrollFigure — mirrors site palette tokens */
+  --ink: var(--foreground);
+  --ink-mid: oklch(0.42 0.06 230);
+  --ink-soft: var(--muted-foreground);
 }
 
 @theme inline {
@@ -77,6 +82,16 @@
 @layer utilities {
   .font-handwritten {
     font-family: var(--font-handwritten), cursive;
+  }
+
+  .font-shantell {
+    font-family: var(--font-shantell), cursive;
+  }
+
+  .font-display {
+    font-family: var(--font-fredoka), system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0em;
   }
 
   .fade-up {

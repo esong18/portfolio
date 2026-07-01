@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { DM_Sans, Caveat } from 'next/font/google'
+import { DM_Sans, Caveat, Fredoka, Shantell_Sans } from 'next/font/google'
 import './globals.css'
 
 const dmSans = DM_Sans({
@@ -12,6 +12,18 @@ const caveat = Caveat({
   subsets: ['latin'],
   variable: '--font-caveat',
   weight: ['400', '600'],
+})
+
+const fredoka = Fredoka({
+  subsets: ['latin'],
+  variable: '--font-fredoka',
+  weight: ['300', '400', '500', '600', '700'],
+})
+
+const shantellSans = Shantell_Sans({
+  subsets: ['latin'],
+  variable: '--font-shantell',
+  weight: ['300', '400', '500', '600'],
 })
 
 export const metadata: Metadata = {
@@ -33,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${caveat.variable} font-sans antialiased`}>
+      <body className={`${dmSans.variable} ${caveat.variable} ${fredoka.variable} ${shantellSans.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

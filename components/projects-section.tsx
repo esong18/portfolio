@@ -64,7 +64,7 @@ export function ProjectsSection() {
     <section id="projects" ref={sectionRef} className="px-6 md:px-12 py-28 max-w-6xl mx-auto">
       <div className="fade-up flex items-end justify-between mb-14">
         <div>
-          <p className="font-handwritten text-accent/80 text-lg mb-1">selected work</p>
+          <p id="selected-work" className="font-handwritten text-accent/80 text-lg mb-1">selected work</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
             Projects
           </h2>

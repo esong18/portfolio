@@ -270,10 +270,13 @@ const CLEAN_NO_PEN = CLEAN.filter((_, i) => i !== 9 && i !== 10);
 // Component
 // ---------------------------------------------------------------------------
 export function ScrollFigure() {
-  const heroRef   = useRef<HTMLDivElement>(null);
-  // Callback ref so it works for whichever SVG is mounted (mobile or desktop)
-  const figureSvgRef = useRef<SVGSVGElement | null>(null);
-  const setSvgRef = (el: SVGSVGElement | null) => { figureSvgRef.current = el; };
+  const heroRef        = useRef<HTMLDivElement>(null);
+  const mobileSvgRef   = useRef<SVGSVGElement | null>(null);
+  const desktopSvgRef  = useRef<SVGSVGElement | null>(null);
+  const getActiveSvg = () => {
+    // md breakpoint = 768px
+    return window.innerWidth < 768 ? mobileSvgRef.current : desktopSvgRef.current;
+  };
   const [t, setT] = useState(0);
   const [vh, setVh] = useState(600);
   // penTarget holds the live viewport rect of #selected-work, plus the
@@ -301,10 +304,10 @@ export function ScrollFigure() {
         setPenTarget({ x: tr.left, y: tr.top, tSection: tSec });
       }
 
-      // Once the figure is fully settled (p ≥ 0.98), measure the pen paths'
-      // actual bounding box directly from the SVG DOM — zero coordinate error.
-      if (p >= 0.98 && figureSvgRef.current) {
-        const svgEl = figureSvgRef.current;
+      // Measure pen position from whichever SVG is currently visible.
+      const activeSvg = getActiveSvg();
+      if (activeSvg) {
+        const svgEl = activeSvg;
         const svgRect = svgEl.getBoundingClientRect();
         const scale = svgRect.width / 448;
         // Pen paths 605+606 bounding box in viewBox space: x 328.83–344.06, y 186.37–206.97
@@ -362,8 +365,9 @@ export function ScrollFigure() {
   // Rotation: tumbles during fall only
   const penRotate = lerp(0, 360, ePen);
 
-  // Opacity: visible once landed
-  const penOpacity = Math.min(1, penTarget.tSection / 0.15);
+  // Opacity: fully visible at detach, fades out over last 20% of fall.
+  // Guard with penStart to prevent a flash at (0,0) before measurement.
+  const penOpacity = penStart ? Math.max(0, 1 - (penTarget.tSection - 0.8) / 0.2) : 0;
 
   return (
     <section ref={heroRef} className="relative h-[200vh]">
@@ -373,7 +377,7 @@ export function ScrollFigure() {
         <div className="flex md:hidden flex-col items-center justify-center w-full px-6 gap-6">
           <div style={{ flexShrink: 0 }}>
             <svg
-              ref={setSvgRef}
+              ref={mobileSvgRef}
               viewBox="0 0 448 465.914"
               style={{ width: svgSize, maxWidth: "90vw" }}
               fill="none"
@@ -420,7 +424,7 @@ export function ScrollFigure() {
         <div className="hidden md:flex relative w-full max-w-5xl items-center justify-center px-8">
           <div style={{ transform: `translateX(${figureX}vw)`, flexShrink: 0 }}>
             <svg
-              ref={setSvgRef}
+              ref={desktopSvgRef}
               viewBox="0 0 448 465.914"
               style={{ width: svgSize, maxWidth: "90vw" }}
               fill="none"
@@ -488,7 +492,7 @@ export function ScrollFigure() {
             width: "100vw",
             height: "100vh",
             pointerEvents: "none",
-            zIndex: 49,
+            zIndex: 51,
             overflow: "visible",
             // fade the whole streak to 0 over the last 20% of the fall
             opacity: Math.max(0, 1 - (penTarget.tSection - 0.8) / 0.2),
@@ -530,7 +534,7 @@ export function ScrollFigure() {
             transform: `rotate(${penRotate}deg)`,
             transformOrigin: "50% 50%",
             pointerEvents: "none",
-            zIndex: 50,
+            zIndex: 52,
           }}
           fill="none"
           strokeLinecap="round"

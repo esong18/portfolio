@@ -476,7 +476,7 @@ export function ScrollFigure() {
 
         {/* Bottom caret */}
         <div
-          className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-muted-foreground/70"
+          className="pointer-events-none absolute bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-muted-foreground/70"
           style={{ opacity: Math.max(0, 1 - t) }}
         >
           ↓ scroll to focus

@@ -110,7 +110,7 @@ export function HeroSection() {
         </div>
 
         <h1 className="fade-up text-5xl md:text-7xl font-bold leading-tight tracking-tight text-balance text-foreground">
-          Hi, I&apos;m Enya.
+          Hi! I&apos;m <span className="text-blue-500">Enya</span>.
           <br />
           <span className="text-muted-foreground font-light">I design clarity</span>
           <br />

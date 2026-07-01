@@ -411,7 +411,7 @@ export function ScrollFigure() {
             }}
           >
             <h1 className="font-bold text-balance text-4xl leading-[1.1] text-foreground sm:text-5xl md:text-6xl">
-              Hi, I&apos;m Enya.{" "}
+              Hi! I&apos;m <span style={{ textDecoration: 'underline', textDecorationStyle: 'wavy', textDecorationColor: 'oklch(0.62 0.1 230 / 0.35)', textUnderlineOffset: '4px', textDecorationThickness: '1px' }}>Enya</span>.{" "}
               <span className="block">
                 I design <em className="not-italic text-accent">clarity</em> in complexity.
               </span>

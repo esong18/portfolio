@@ -245,7 +245,7 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                The time faculty members spend on creating, grading, and revising course material and exams is high. To create weekly quizzes on top a significant amount of work, but they still want to support the students' learning.
+                Faculty members spend too much time on creating, grading, and revising course material but they still want to support student learning through weekly quizzes.
               </p>
               <p className="text-foreground/80 leading-relaxed">
 
@@ -255,7 +255,7 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Solution</h3>
               <p className="text-foreground/80 leading-relaxed">
-                The final design utilized AI to generate questions for student recall and understanding of classroom concepts. The model takes in course material, generates questions, and faculty can easily approve or edit. The final design was non-committal, intended to help demonstrate a proof of technology.
+                Utilized AI to generate questions for student recall and understanding of classroom concepts.
               </p>
               {/* <div className="mt-6 flex flex-wrap gap-2">
                 {['Product Design', 'Mobile UX', 'A/B Testing'].map((tag) => (
@@ -352,7 +352,7 @@ export default function HudlCasePage() {
               <li>Students get immediate feedback on quiz performance</li>
             </ul>
             <p className="mt-3 text-foreground/80">
-              This solution follows department goals of a flipped classroom, where medical students gain initial exposure to new material outside of class and use class time for higher-order activities.
+              This solution follows department goals of a flipped classroom, where medical students gain initial exposure to new material outside of class and use class time for higher-order activities. Final design was non-committal, intended to help demonstrate a proof of technology.
             </p>
           </motion.div>
 

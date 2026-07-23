@@ -431,7 +431,7 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                Skincare should be simple — but between conflicting ingredients, misleading marketing, and paywalled apps, building a routine that actually works feels overwhelming. After going down my own skincare rabbit hole, I noticed a gap: no tool combined routine building, ingredient checking, and compatibility analysis in one place.
+                Skincare should be simple. Between conflicting ingredients, misleading marketing, and paywalled apps, building a routine that actually works feels overwhelming. 
               </p>
               <p className="text-foreground/80 leading-relaxed">
 
@@ -523,7 +523,7 @@ export default function HudlCasePage() {
             <p className="font-handwritten text-accent/80 text-lg mb-2">outcomes</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">The Prototypes</h2>
             <p className="text-foreground/80 leading-relaxed">
-              A simple website that achieves it all: craft a personalized routine, view community routines, and check the compatibility of ingredients in your current routine. This was a self guided project to grow my familiarity designing with AI and to create a passion project for my interests- the design is consistently being refined in my free time.
+              After going down my own skincare rabbit hole, I noticed a gap: no tool combined routine building, ingredient checking, and compatibility analysis in one place. My solution was a prototyped website that addressed the biggest concerns: craft a personalized routine, view community routines, and check the compatibility of ingredients in your current routine. This was a self guided project to grow my familiarity designing with AI and to create a passion project for my interests- the design is consistently being refined in my free time.
             </p>
           </motion.div>
 

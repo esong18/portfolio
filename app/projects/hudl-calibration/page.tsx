@@ -288,14 +288,14 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Hudl's Focus Flex Camera relies on machine learning to identify field endpoints and orient recording automatically. When ML calibration falls short, users are handed a manual calibration flow as a fallback — a process that currently leaves users confused and frustrated.
+                Client feedback on the current manual camera callibration process shows it's confusing.
               </p>
             </div>
 
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Solution</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Reimagined the calibration process with a one-pin-at-a-time validation process. The final design, tested by beta users, was a high-fidelity prototype that was implemented into the app.
+                Reimagined the calibration process and tested with beta users. Approved and shipped to the app.
               </p>
             </div>
           </motion.div>

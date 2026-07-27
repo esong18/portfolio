@@ -6,10 +6,9 @@ import { useEffect, useRef, useState, useCallback } from "react";
 // Whiteboard erase-and-rewrite cycling text
 // ---------------------------------------------------------------------------
 const WHITEBOARD_PHRASES = [
-  'service design projects',
-  'interaction design work',
-  'user research initiatives',
-  'business strategy development',
+  'service design initiatives',
+  'client workshops',
+  'passion projects with AI tools',
 ]
 
 // Animation phase durations (ms)

@@ -94,7 +94,7 @@ export const Card = ({
       }
     >
       <div className={showCard
-        ? "h-auto w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4"
+        ? "h-auto w-full overflow-hidden rounded-2xl bg-[#222222] md:rounded-2xl md:p-4"
         : "h-auto w-full"
       }>
         {children}

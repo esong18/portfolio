@@ -5,6 +5,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const projects = [
+    {
+    title: 'Medical AI Quiz Generator',
+    description:
+      'Assist faculty members with creating quiz questions through AI generation.',
+    tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
+    image: '/projects/aiquiz/quizcover.png',
+    year: '2025',
+    note: 'proof of technology',
+    slug: 'ai-quiz-generator',
+  },
   {
     title: 'Hudl Calibration Redesign',
     description:
@@ -16,6 +26,16 @@ const projects = [
     slug: 'hudl-calibration',
   },
   {
+    title: 'Design to Code Migration',
+    description:
+      'Migrating design assets from Figma into a modern codebase.',
+    tags: ['Workflow Planning', 'AI IDE', 'Figma to Code'],
+    image: '/projects/design-to-code/main.png',
+    year: '2026',
+    note: 'react to angular widget builder',
+    slug: 'design-to-code-migration',
+  },
+    {
     title: 'BuildMySkincare',
     description:
       'Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.',
@@ -24,16 +44,6 @@ const projects = [
     year: '2025',
     note: 'AI prototyping',
     slug: 'skin-analysis',
-  },
-  {
-    title: 'Medical AI Quiz Generator',
-    description:
-      'Assist faculty members with creating quiz questions through AI generation.',
-    tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
-    image: '/projects/aiquiz/quizcover.png',
-    year: '2025',
-    note: 'proof of technology',
-    slug: 'ai-quiz-generator',
   },
   // Additional projects can be added here
 ]

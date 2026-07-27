@@ -80,7 +80,7 @@ export function ProjectsSection() {
           </h2>
         </div>
         <p className="hidden md:block text-sm text-muted-foreground max-w-xs text-right leading-relaxed">
-          Projects that reflect how I think, solve, and design.
+          Projects that reflect how I think, design, and solve.
         </p>
       </div>
 

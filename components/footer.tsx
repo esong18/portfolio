@@ -26,7 +26,7 @@ export function Footer() {
                 <a
                   href={link.href}
                   className="hover:text-foreground transition-colors duration-200"
-                  aria-label={`Visit ${link} profile`}
+                  aria-label={`Visit ${link.label}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

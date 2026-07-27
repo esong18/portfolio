@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
 const links = [
-  { label: 'My Projects', href: '/#projects' },
-  { label: 'About Me', href: '/about' },
+  { label: 'My Projects', href: '/#projects', anchor: 'projects' },
+  { label: 'About Me', href: '/about', anchor: null },
 ]
 
 export function Navbar() {
@@ -19,6 +19,14 @@ export function Navbar() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  function handleProjectsClick(e: React.MouseEvent, anchor: string | null) {
+    if (!anchor) return
+    if (pathname === '/') {
+      e.preventDefault()
+      document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <header
@@ -36,10 +44,11 @@ export function Navbar() {
 
       <nav aria-label="Primary navigation">
         <ul className="flex items-center gap-1">
-          {links.map(({ label, href }) => (
+          {links.map(({ label, href, anchor }) => (
             <li key={label}>
               <Link
                 href={href}
+                onClick={(e) => handleProjectsClick(e, anchor)}
                 className={cn(
                   'relative px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200',
                   pathname === '/about' && label === 'About Me'

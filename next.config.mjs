@@ -9,7 +9,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/:file*.pdf',
+        source: '/:path*.pdf',
         headers: [
           { key: 'Content-Type', value: 'application/pdf' },
           { key: 'Content-Disposition', value: 'inline' },

@@ -395,7 +395,7 @@ export default function HudlCasePage() {
           <div className="w-full h-auto bg-gradient-to-br from-secondary/50 to-background rounded-2xl">
             <div className="w-full h-auto relative rounded-xl overflow-hidden bg-foreground/5">
               <Image
-                src="/projects/Skincare/skinheader.png"
+                src="/projects/Skincare/bigpicture.png"
                 alt="Skincare Analysis"
                 width={1920}
                 height={1080}

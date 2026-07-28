@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from 'react'
 import { CursorTrail } from './cursor-trail'
 
 const TYPEWRITER_WORDS = [
-  'service design initiatives',
-  'client workshops and strategy development',
-  'passion projects with AI tools',
+  'making AI less scary',
+  'work worth showing',
+  'coffee number three',
 ]
 
 function TypewriterWord() {

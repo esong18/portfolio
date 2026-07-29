@@ -209,7 +209,7 @@ export default function HudlCasePage() {
           <div className="w-full h-auto bg-gradient-to-br from-secondary/50 to-background rounded-2xl">
             <div className="w-full h-auto relative rounded-xl overflow-hidden bg-foreground/5">
               <Image
-                src="/projects/aiquiz/quizcover.png"
+                src="/projects/aiquiz/quizheader.png"
                 alt="AI quiz platform"
                 width={1920}
                 height={1080}
@@ -255,7 +255,7 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Solution</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Utilized AI to generate questions for student recall and understanding of classroom concepts.
+                Utilized IBM's AI technology to generate questions for student recall and understanding of classroom concepts.
               </p>
               {/* <div className="mt-6 flex flex-wrap gap-2">
                 {['Product Design', 'Mobile UX', 'A/B Testing'].map((tag) => (

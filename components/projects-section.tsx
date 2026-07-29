@@ -19,7 +19,7 @@ const projects = [
     title: 'Hudl Calibration Redesign',
     description:
       'Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.',
-    tags: ['Product Design', 'Mobile', 'A/B Testing'],
+    tags: ['Product Design', 'Design Systems', 'A/B Testing'],
     image: '/projects/Hudl/hudlcover.png',
     year: '2022',
     note: 'shipped to production',

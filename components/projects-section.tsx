@@ -6,26 +6,6 @@ import Link from 'next/link'
 
 const projects = [
     {
-    title: 'Medical AI Quiz Generator',
-    description:
-      'Assist faculty members with creating quiz questions through AI generation.',
-    tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
-    image: '/projects/aiquiz/quizcover.png',
-    year: '2025',
-    note: 'proof of technology',
-    slug: 'ai-quiz-generator',
-  },
-  {
-    title: 'Hudl Calibration Redesign',
-    description:
-      'Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.',
-    tags: ['Product Design', 'Design Systems', 'A/B Testing'],
-    image: '/projects/Hudl/hudlcover.png',
-    year: '2022',
-    note: 'shipped to production',
-    slug: 'hudl-calibration',
-  },
-  {
     title: 'Design to Code Migration',
     description:
       'Migrating design assets from Figma into a modern codebase.',
@@ -34,6 +14,16 @@ const projects = [
     year: '2026',
     note: 'react to angular widget builder',
     slug: 'design-to-code-migration',
+  },  
+  {
+    title: 'Medical AI Quiz Generator',
+    description:
+      'Assist faculty members with creating quiz questions through AI generation.',
+    tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
+    image: '/projects/aiquiz/quizcover.png',
+    year: '2025',
+    note: 'proof of technology',
+    slug: 'ai-quiz-generator',
   },
     {
     title: 'BuildMySkincare',
@@ -45,6 +35,16 @@ const projects = [
     note: 'AI prototyping',
     slug: 'skin-analysis',
   },
+  {
+    title: 'Hudl Calibration Redesign',
+    description:
+      'Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.',
+    tags: ['Product Design', 'Design Systems', 'A/B Testing'],
+    image: '/projects/Hudl/hudlcover.png',
+    year: '2022',
+    note: 'shipped to production',
+    slug: 'hudl-calibration',
+},
   // Additional projects can be added here
 ]
 

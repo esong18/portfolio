@@ -27,14 +27,14 @@ const processSteps: ProcessStep[] = [
     title: 'Client Discovery',
     description:
       'Interviewed the client to understand their vision for an enterprise-wide widget library and the challenges of refactoring widgets manually.',
-    image: '/projects/design-to-code/dashboard.png',
+    image: '/projects/design-to-code/Dashboard.png',
   },
   {
     number: 2,
     title: 'Assessing the Architecture',
     description:
       'Reviewed the existing React component library against the new micro-UI architecture standards to define migration requirements.',
-    image: '/projects/design-to-code/architecture.png',
+    image: '/projects/design-to-code/Architecture.png',
   },
   {
     number: 3,

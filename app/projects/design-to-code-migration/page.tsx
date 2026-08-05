@@ -201,7 +201,7 @@ export default function HudlCasePage() {
                 Design-to-Code Migration
               </h2>
               <p className="text-base mb-10 md:text-lg text-foreground/70 max-w-2xl mx-auto">
-                An AI-powered migration pipeline that automates the refactoring of React widgets to Angular, scaling a component library to a new micro-UI architecture.
+               An AI-powered guided workflow for refactoring widgets into a component library for a new micro-UI architecture.
               </p>
             </motion.div>
           }

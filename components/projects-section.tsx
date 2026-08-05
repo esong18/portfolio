@@ -45,16 +45,17 @@ const projects = [
     note: 'shipped to production',
     slug: 'hudl-calibration',
   },
-  {
-    title: 'Dr. Assistant',
-    description:
-      'An AI-powered documentation tool designed to reduce administrative burden for physicians and give time back to patient care.',
-    tags: ['AI Design', 'Healthcare', 'UX Research'],
-    image: '/projects/drassistance/drcover.png',
-    year: '2025',
-    note: 'clinical AI tool',
-    slug: 'dr-assistant',
-  },
+  // Dr. Assistant hidden — uncomment to show
+  // {
+  //   title: 'Dr. Assistant',
+  //   description:
+  //     'An AI-powered documentation tool designed to reduce administrative burden for physicians and give time back to patient care.',
+  //   tags: ['AI Design', 'Healthcare', 'UX Research'],
+  //   image: '/projects/drassistance/drcover.png',
+  //   year: '2025',
+  //   note: 'clinical AI tool',
+  //   slug: 'dr-assistant',
+  // },
   // Additional projects can be added here
 ]
 

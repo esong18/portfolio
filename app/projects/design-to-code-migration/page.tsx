@@ -198,7 +198,7 @@ export default function HudlCasePage() {
             >
               <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">design engineering / proof of technology</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
-                Design-to-Code Migration
+                Widget Code Refactoring
               </h2>
               <p className="text-base mb-10 md:text-lg text-foreground/70 max-w-2xl mx-auto">
                An AI-powered guided workflow for refactoring widgets into a component library for a new micro-UI architecture.

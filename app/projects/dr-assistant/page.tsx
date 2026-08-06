@@ -24,33 +24,32 @@ interface ProcessStep {
 const processSteps: ProcessStep[] = [
   {
     number: 1,
-    title: 'User Research',
+    title: 'User Research & Ideation',
     description: [
-      'Interviewed users affected by recent natural disasters',
+      'Spoke with users affected by recent natural disasters, turning insights into potential solution concepts.',
     ],
-    image: '/projects/drassistance/drcover.png',
+    image: '/projects/drassistance/interviewinsights.png',
   },
   {
     number: 2,
-    title: 'Ideation & Competitive Analysis',
+    title: 'Competitive Analysis',
     description: [
-      'Ideated on potential solutions and conducted competitive analysis on relief efforts an design choices',
+      'Solution concepts were narrowed down through research into feasibility and existing approaches, including a competitive analysis of relief efforts and their design choices. Alternative brand communication methods, such as iMessage-based texting for HR, were also explored to inform how users without app access might still be reached.',
     ],
-    image: '/projects/drassistance/drcover.png',
+    image: '/projects/drassistance/competitive.png',
   },
   {
     number: 3,
-    title: 'Style Guide & Wireframes',
+    title: 'Figma Wireframes',
     description: [
-      'Creating a style guide to fit the client and beginning initial wireframes',
     ],
-    image: '/projects/drassistance/drcover.png',
+    image: '/projects/drassistance/prototype.png',
   },
   {
     number: 4,
     title: 'Telling the Story',
     description: [
-      'Created a persona. to assist in the final walkthrough to the client.',
+      'A persona was drafted to walk the client through the prototype, giving the proof of concept a clear narrative. As part of this work, I mentored an intern through the process of developing this persona.',
     ],
     image: '/projects/drassistance/drcover.png',
   },
@@ -213,30 +212,43 @@ export default function DrAssistantPage() {
             >
               <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">AI-assisted clinical tool</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
-                Dr. Assistant
+                AI Assistant for Disaster Relief
               </h2>
               <p className="text-base mb-30 md:text-lg text-foreground/70 max-w-2xl mx-auto">
-                An AI-powered documentation tool designed to reduce administrative burden for physicians and give time back to patient care.
+                An AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.
               </p>
             </motion.div>
           }
         >
-          <div className="flex items-center justify-center h-full py-4 md:py-8">
-            <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.7, ease: [0.33, 1, 0.36, 1] }}
-              className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl border border-border"
-            >
-              <Image
-                src="/projects/drassistance/drcover.png"
-                alt="Dr. Assistant interface"
-                width={1200}
-                height={750}
-                className="w-full h-auto"
-                priority
-              />
-            </motion.div>
+          <div className="flex items-end justify-center gap-4 md:gap-8 lg:gap-12 h-full py-4 md:py-8">
+            {[
+              { src: '/projects/drassistance/SOS.png', alt: 'DR Assistant — screen 1' },
+              { src: '/projects/drassistance/text1.png', alt: 'DR Assistant — screen 2' },
+              { src: '/projects/drassistance/text2.png', alt: 'DR Assistant — screen 3' },
+            ].map((image, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.33, 1, 0.36, 1] }}
+                whileHover={{ y: -16, transition: { duration: 0.3 } }}
+                style={{ marginTop: [0, -16, 0][i] }}
+              >
+                <div className="relative mx-auto w-48 sm:w-56 md:w-64 lg:w-72 rounded-3xl border-8 md:border-10 border-foreground/20 bg-foreground/5 overflow-hidden shadow-2xl">
+                  <div className="relative w-full">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={500}
+                      height={900}
+                      className="w-full h-auto"
+                      sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
+                      priority
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </ContainerScroll>
       </section>
@@ -265,14 +277,14 @@ export default function DrAssistantPage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Physicians spend an estimated 2 hours on documentation for every 1 hour of patient care. Existing tools are rigid and create cognitive overhead rather than reducing it.
+                Non-emergency disaster relief resources are decentralized and often unreachable without cell or internet service.
               </p>
             </div>
 
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Solution</h3>
               <p className="text-foreground/80 leading-relaxed">
-                A contextual AI assistant embedded into the clinical workflow — surfacing smart templates, generating draft notes, and adapting to each physician's documentation style.
+                From complex to conversational: users can leverage iOS satellite texting to support questions on relief efforts.
               </p>
             </div>
           </motion.div>
@@ -302,16 +314,16 @@ export default function DrAssistantPage() {
           >
             {[
               {
-                title: 'Research & Discovery',
-                items: ['Physician interviews', 'Workflow observation', 'Pain point synthesis'],
+                title: 'User Interviews',
+                items: ['Developed interview questions to guide user research'],
               },
               {
-                title: 'Design & Prototyping',
-                items: ['Interaction design', 'High-fidelity Figma prototypes', 'AI interface patterns'],
+                title: 'Competitive Analysis',
+                items: ['Researched and synthesized relief efforts across different states', 'Analyzed iMessage communication with different brands'],
               },
               {
-                title: 'Testing & Iteration',
-                items: ['Moderated usability testing', 'Stakeholder reviews', 'Iterative refinement'],
+                title: 'Wireframes + Persona',
+                items: ['Mocked wireframes in Figma', 'Mentored intern on persona creation'],
               },
             ].map((role, i) => (
               <motion.div

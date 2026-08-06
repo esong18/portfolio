@@ -14,7 +14,7 @@ const projects = [
     year: '2026',
     note: 'react to angular widget builder',
     slug: 'design-to-code-migration',
-  },  
+  },
   {
     title: 'Medical AI Quiz Generator',
     description:
@@ -25,6 +25,16 @@ const projects = [
     note: 'proof of technology',
     slug: 'ai-quiz-generator',
   },
+  //   {
+  //   title: 'Disaster Recovery Assistant',
+  //   description:
+  //     'AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.',
+  //   tags: ['Competitive Analysis', 'User Research', 'Wireframes' ],
+  //   image: '/projects/drassistance/drcover2.png',
+  //   year: '2025',
+  //   note: 'proof of concept',
+  //   slug: 'dr-assistant',
+  // },
     {
     title: 'BuildMySkincare',
     description:
@@ -45,17 +55,6 @@ const projects = [
     note: 'shipped to production',
     slug: 'hudl-calibration',
   },
-  // Dr. Assistant hidden — uncomment to show
-  // {
-  //   title: 'Dr. Assistant',
-  //   description:
-  //     'An AI-powered documentation tool designed to reduce administrative burden for physicians and give time back to patient care.',
-  //   tags: ['AI Design', 'Healthcare', 'UX Research'],
-  //   image: '/projects/drassistance/drcover.png',
-  //   year: '2025',
-  //   note: 'clinical AI tool',
-  //   slug: 'dr-assistant',
-  // },
   // Additional projects can be added here
 ]
 
@@ -83,6 +82,7 @@ export function ProjectsSection() {
 
   return (
     <section id="projects" ref={sectionRef} className="px-6 md:px-12 py-28 max-w-6xl mx-auto">
+      {/* Section header */}
       <div className="fade-up flex items-end justify-between mb-14">
         <div>
           <p id="selected-work" className="font-handwritten text-accent/80 text-lg mb-1">selected work</p>
@@ -95,44 +95,42 @@ export function ProjectsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Project rows */}
+      <div className="divide-y divide-border">
         {projects.map((project, i) => (
           <Link
             key={project.title}
             href={`/projects/${project.slug}`}
-            className="fade-up"
-            style={{ transitionDelay: `${i * 60}ms` }}
+            className="fade-up group block py-10 first:pt-0 last:pb-0 motion-reduce:transition-none"
+            style={{ transitionDelay: `${i * 80}ms` }}
           >
-            <article className="group relative bg-card border border-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_oklch(0.62_0.1_230_/_0.10)] h-full">
+            <article className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
 
-              {/* Image */}
-              <div className="relative w-full h-56 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={`${project.title} project preview`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                {/* Description overlay */}
-                <div className="absolute inset-0 bg-foreground/80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-primary-foreground text-sm leading-relaxed text-center">
-                    {project.description}
-                  </p>
+              {/* ── Text side ── */}
+              <div className="flex flex-col gap-4 md:order-1">
+                {/* Year + note */}
+                <div className="flex items-center gap-3">
+                  <span className="text-xs text-muted-foreground">{project.year}</span>
+                  <span className="font-handwritten text-xs text-accent/60">{project.note}</span>
                 </div>
-              </div>
 
-              {/* Card body */}
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-4 mb-3">
-                  <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
-                  <div className="flex flex-col items-end gap-1 shrink-0">
-                    <span className="text-xs text-muted-foreground">{project.year}</span>
-                    <span className="font-handwritten text-xs text-accent/60 whitespace-nowrap">
-                      {project.note}
-                    </span>
-                  </div>
-                </div>
+                {/* Title with arrow reveal */}
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight text-balance flex items-center gap-2">
+                  {project.title}
+                  <span
+                    aria-hidden="true"
+                    className="inline-block translate-x-0 opacity-0 group-hover:translate-x-1 group-hover:opacity-100 transition-all duration-200 text-accent motion-reduce:transition-none"
+                  >
+                    →
+                  </span>
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm leading-relaxed text-foreground/70 max-w-md">
+                  {project.description}
+                </p>
+
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
@@ -144,6 +142,18 @@ export function ProjectsSection() {
                   ))}
                 </div>
               </div>
+
+              {/* ── Image side ── */}
+              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-xl md:order-2 bg-secondary/40">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} project preview`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+
             </article>
           </Link>
         ))}

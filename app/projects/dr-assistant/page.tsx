@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useScroll } from 'framer-motion'
 import { ContainerScroll } from '@/components/container-scroll'
+import { ImageCarousel } from '@/components/image-carousel'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { ArrowUp, ArrowLeft } from 'lucide-react'
@@ -42,6 +43,7 @@ const processSteps: ProcessStep[] = [
     number: 3,
     title: 'Figma Wireframes',
     description: [
+      "Based on research insights, a flow of questions was created to guide the prototype's interactions. In partnership with a senior designer, this flow was brought to life through interactive prototyping in Figma, resulting in clickable wireframes for demonstrations."
     ],
     image: '/projects/drassistance/prototype.png',
   },
@@ -51,7 +53,7 @@ const processSteps: ProcessStep[] = [
     description: [
       'A persona was drafted to walk the client through the prototype, giving the proof of concept a clear narrative. As part of this work, I mentored an intern through the process of developing this persona.',
     ],
-    image: '/projects/drassistance/drcover.png',
+    image: '/projects/drassistance/persona.png',
   },
 ]
 
@@ -343,6 +345,77 @@ export default function DrAssistantPage() {
                     </li>
                   ))}
                 </ul>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Outcomes */}
+      <section className="px-6 md:px-12 py-16 md:py-24 border-b border-border">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="font-handwritten text-accent/80 text-lg mb-2">outcomes</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Final Concept</h2>
+            <p className="text-foreground/80 leading-relaxed">
+               With a cross-functional team, we designed a mobile experience to support emergency response in non-immediate danger situations, such as locating nearby shelters or transportation options.
+            </p>
+            <p className="mt-3 text-foreground/80">
+              This concept builds on an earlier state proposal for a website to help residents access post-disaster recovery forms. However, that proposal assumed residents had internet access, an assumption that breaks down in the immediate aftermath of a disaster, when it's needed most. This approach fills that gap by leveraging iOS SOS satellite texting, which remains available when cellular networks fail, so residents can still locate shelters and transportation even without connectivity.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <ImageCarousel
+              images={[
+                { src: '/projects/drassistance/SOS.png', alt: 'SOS instructions' },
+                { src: '/projects/drassistance/text1.png', alt: 'Help text' },
+                { src: '/projects/drassistance/final2.png', alt: 'Text conversation' },
+                { src: '/projects/drassistance/final3.png', alt: 'Text conversation' },
+                { src: '/projects/drassistance/final4.png', alt: 'Text conversation' },
+              ]}
+            />
+          </motion.div>
+
+          {/* Key Features */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
+          >
+            {[
+              {
+                title: 'Expanded Reach in Connectivity Gaps',
+                description: 'Extends service to users cellular/data-dependent apps can\'t reach, especially when shelter is needed',
+              },
+              {
+                title: 'Infrastructure Leverage',
+                description: 'Built on existing iPhone satellite technology, avoiding the cost of new hardware or proprietary satellite partnerships.',
+              },
+            ].map((feature, i) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="pl-4 border-l-2 border-accent"
+              >
+                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-sm leading-relaxed text-foreground/80">{feature.description}</p>
               </motion.div>
             ))}
           </motion.div>

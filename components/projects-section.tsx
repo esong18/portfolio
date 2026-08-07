@@ -25,16 +25,16 @@ const projects = [
     note: 'proof of technology',
     slug: 'ai-quiz-generator',
   },
-  //   {
-  //   title: 'Disaster Recovery Assistant',
-  //   description:
-  //     'AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.',
-  //   tags: ['Competitive Analysis', 'User Research', 'Wireframes' ],
-  //   image: '/projects/drassistance/drcover2.png',
-  //   year: '2025',
-  //   note: 'proof of concept',
-  //   slug: 'dr-assistant',
-  // },
+    {
+    title: 'Disaster Recovery Assistant',
+    description:
+      'AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.',
+    tags: ['Competitive Analysis', 'User Research', 'Wireframes' ],
+    image: '/projects/drassistance/drcover2.png',
+    year: '2025',
+    note: 'proof of concept',
+    slug: 'dr-assistant',
+  },
     {
     title: 'BuildMySkincare',
     description:

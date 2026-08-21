@@ -5,13 +5,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const projects = [
-    {
+      {
+    title: 'BuildMySkincare',
+    description:
+      'Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.',
+    tags: ['Design Systems', 'Web', 'Figma Make'],
+    image: '/projects/Skincare/skincover.png',
+    note: 'AI prototyping',
+    slug: 'skin-analysis',
+  },  
+  {
     title: 'Design to Code Migration',
     description:
       'Migrating design assets from Figma into a modern codebase.',
     tags: ['Workflow Planning', 'AI IDE', 'Figma to Code'],
     image: '/projects/design-to-code/main.png',
-    year: '2026',
     note: 'react to angular widget builder',
     slug: 'design-to-code-migration',
   },
@@ -21,7 +29,6 @@ const projects = [
       'Assist faculty members with creating quiz questions through AI generation.',
     tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
     image: '/projects/aiquiz/quizcover.png',
-    year: '2025',
     note: 'proof of technology',
     slug: 'ai-quiz-generator',
   },
@@ -31,19 +38,8 @@ const projects = [
       'AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.',
     tags: ['Competitive Analysis', 'User Research', 'Wireframes' ],
     image: '/projects/drassistance/drcover2.png',
-    year: '2025',
     note: 'proof of concept',
     slug: 'dr-assistant',
-  },
-    {
-    title: 'BuildMySkincare',
-    description:
-      'Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.',
-    tags: ['Design Systems', 'Web', 'Figma Make'],
-    image: '/projects/Skincare/skincover.png',
-    year: '2025',
-    note: 'AI prototyping',
-    slug: 'skin-analysis',
   },
   {
     title: 'Hudl Calibration Redesign',
@@ -51,7 +47,6 @@ const projects = [
       'Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.',
     tags: ['Product Design', 'Design Systems', 'A/B Testing'],
     image: '/projects/Hudl/hudlcover.png',
-    year: '2022',
     note: 'shipped to production',
     slug: 'hudl-calibration',
   },
@@ -108,9 +103,8 @@ export function ProjectsSection() {
 
               {/* ── Text side ── */}
               <div className="flex flex-col gap-4 md:order-1">
-                {/* Year + note */}
+                {/* Note */}
                 <div className="flex items-center gap-3">
-                  <span className="text-xs text-muted-foreground">{project.year}</span>
                   <span className="font-handwritten text-xs text-accent/60">{project.note}</span>
                 </div>
 

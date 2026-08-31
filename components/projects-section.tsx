@@ -14,6 +14,15 @@ const projects = [
     note: 'AI prototyping',
     slug: 'skin-analysis',
   },  
+    {
+    title: 'Medical AI Quiz Generator',
+    description:
+      'Assist faculty members with creating quiz questions through AI generation.',
+    tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
+    image: '/projects/aiquiz/quizcover.png',
+    note: 'proof of technology',
+    slug: 'ai-quiz-generator',
+  },
   {
     title: 'Design to Code Migration',
     description:
@@ -22,15 +31,6 @@ const projects = [
     image: '/projects/design-to-code/main.png',
     note: 'react to angular widget builder',
     slug: 'design-to-code-migration',
-  },
-  {
-    title: 'Medical AI Quiz Generator',
-    description:
-      'Assist faculty members with creating quiz questions through AI generation.',
-    tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
-    image: '/projects/aiquiz/quizcover.png',
-    note: 'proof of technology',
-    slug: 'ai-quiz-generator',
   },
     {
     title: 'Disaster Recovery Assistant',

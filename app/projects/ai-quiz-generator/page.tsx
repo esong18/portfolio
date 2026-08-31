@@ -40,14 +40,14 @@ const processSteps: ProcessStep[] = [
     number: 3,
     title: 'The Experience',
     description:
-      'Mentored a summer intern to lead desgining the user flow and sketches of interactions we would show through wireframes. She led the conversation to present the flow to the client for feedback and approval.',
+      'Mentored a summer intern to lead desgining the user flow and sketches of interactions we would show through wireframes. Design reviews were held with engineers and clients for feedback and approval on feasibility and UI. The designs have been changed for this site for confidentiality.',
     image: '/projects/aiquiz/quiz-step3.png',
   },
   {
     number: 4,
     title: 'The Design',
     description:
-      'Transformed sketches to wireframes on Figma, and coordinating with a front-end developer to bring our designs to life.',
+      'Transformed sketches to wireframes on Figma, and coordinating with a front-end developer to bring our designs to life. Utilized Figma dev mode for engineer hand off.',
     image: '/projects/aiquiz/quiz-step4.png',
   },
 ]
@@ -297,7 +297,7 @@ export default function HudlCasePage() {
               },
               {
                 title: 'Design & Prototyping',
-                items: ['Wireframing', 'Figma Make for Iterations', 'Style Guide Creation'],
+                items: ['Wireframing + Engineer Hand-Off', 'Figma Make for Iterations', 'Style Guide Creation'],
               },
               {
                 title: 'Design Mentor',

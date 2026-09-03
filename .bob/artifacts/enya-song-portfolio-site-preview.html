@@ -1,0 +1,488 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enya Song Portfolio — Preview</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #f9f8f5;
+    --fg:        #1e2228;
+    --card:      #f4f3f0;
+    --muted:     #e8e7e3;
+    --muted-fg:  #666e7a;
+    --accent:    #4b82c0;
+    --border:    #e2e1dc;
+    --secondary: #edf0f5;
+    --radius:    1rem;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ── NAVBAR ── */
+  nav.topbar {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 48px;
+    background: rgba(249,248,245,0.82);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav.topbar .logo {
+    font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
+    color: var(--fg); text-decoration: none;
+  }
+  nav.topbar .links { display: flex; gap: 4px; }
+  nav.topbar .links a {
+    font-size: 13px; font-weight: 500;
+    color: var(--muted-fg);
+    padding: 6px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  nav.topbar .links a:hover { background: var(--muted); color: var(--fg); }
+  nav.topbar .links a.active { background: var(--fg); color: var(--bg); }
+
+  /* ── HERO / SCROLL FIGURE ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 80px 48px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); pointer-events: none;
+  }
+  .hero-blob-1 {
+    width: 480px; height: 320px;
+    background: oklch(0.78 0.08 225 / 0.25);
+    top: 10%; left: 5%;
+  }
+  .hero-blob-2 {
+    width: 360px; height: 280px;
+    background: oklch(0.88 0.05 200 / 0.2);
+    bottom: 15%; right: 8%;
+  }
+
+  .hero-sketch {
+    position: relative; z-index: 1;
+    width: min(560px, 90vw);
+    margin-bottom: 40px;
+  }
+  .hero-sketch svg { width: 100%; height: auto; }
+
+  .hero-tagline {
+    position: relative; z-index: 1;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    max-width: 640px;
+    color: var(--fg);
+  }
+  .hero-sub {
+    position: relative; z-index: 1;
+    margin-top: 16px;
+    font-size: 15px; color: var(--muted-fg);
+    max-width: 440px;
+  }
+
+  /* handwritten / whiteboard word */
+  .whiteboard-word {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* ── SECTION SHARED ── */
+  .section { padding: 112px 48px; max-width: 1100px; margin: 0 auto; }
+
+  .section-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 56px;
+  }
+  .section-label {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: color-mix(in oklch, var(--accent) 80%, transparent);
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 700; letter-spacing: -0.02em;
+    color: var(--fg);
+  }
+  .section-note {
+    font-size: 13px; color: var(--muted-fg);
+    max-width: 260px; text-align: right; line-height: 1.6;
+  }
+
+  /* ── PROJECTS ── */
+  .projects-list { border-top: 1px solid var(--border); }
+  .project-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none; color: inherit;
+    cursor: pointer;
+  }
+  .project-row:hover .proj-img { transform: scale(1.04); }
+  .project-row:hover .arrow { opacity: 1; transform: translateX(4px); }
+
+  .proj-meta { font-family: Georgia, serif; font-style: italic; font-size: 11px; color: color-mix(in oklch, var(--accent) 60%, transparent); }
+  .proj-title {
+    font-size: clamp(20px, 2.5vw, 26px); font-weight: 700;
+    letter-spacing: -0.01em; margin: 10px 0 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .arrow {
+    opacity: 0; color: var(--accent);
+    transition: opacity 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .proj-desc { font-size: 13px; color: rgba(30,34,40,0.68); line-height: 1.7; max-width: 360px; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag {
+    font-size: 11px; font-weight: 500;
+    background: var(--secondary); color: var(--fg);
+    padding: 4px 10px; border-radius: 999px;
+  }
+
+  .proj-img-wrap {
+    border-radius: 14px; overflow: hidden;
+    aspect-ratio: 16/9; background: var(--secondary);
+    position: relative;
+  }
+  .proj-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+    transition: transform 0.45s cubic-bezier(0.22,1,0.36,1);
+  }
+  .proj-img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--muted) 0%, var(--secondary) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: var(--muted-fg);
+  }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+  .principle { display: flex; flex-direction: column; gap: 16px; }
+  .principle-num-row { display: flex; align-items: center; gap: 12px; }
+  .principle-num {
+    font-family: Georgia, serif; font-style: italic;
+    font-size: 12px; color: var(--muted-fg); white-space: nowrap;
+  }
+  .principle-line { flex: 1; height: 1px; background: var(--border); }
+  .principle-title { font-size: 16px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; }
+  .principle-body { font-size: 13px; color: rgba(30,34,40,0.88); line-height: 1.7; }
+  .principle-quote {
+    font-family: Georgia, serif; font-style: italic;
+    font-size: 12px; color: var(--accent);
+    line-height: 1.5; margin-top: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer.site-footer {
+    border-top: 1px solid var(--border);
+    padding: 64px 48px;
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 32px;
+  }
+  .footer-say { font-family: Georgia, serif; font-style: italic; font-size: 15px; color: color-mix(in oklch, var(--accent) 70%, transparent); margin-bottom: 4px; }
+  .footer-cta { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+  .footer-email { font-size: 13px; color: var(--muted-fg); text-decoration: underline; text-underline-offset: 3px; }
+  .footer-links { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted-fg); text-align: right; }
+  .footer-links a { color: inherit; text-decoration: none; }
+  .footer-links a:hover { color: var(--fg); }
+
+  /* ── ABOUT PAGE PEEK ── */
+  .page-tabs {
+    display: flex; gap: 0; border-bottom: 2px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .page-tab {
+    padding: 10px 20px; font-size: 13px; font-weight: 500;
+    color: var(--muted-fg); cursor: default; border-bottom: 2px solid transparent; margin-bottom: -2px;
+  }
+  .page-tab.active { color: var(--fg); border-color: var(--fg); }
+
+  /* ── PREVIEW LABEL ── */
+  .preview-label {
+    text-align: center; padding: 16px 48px 0;
+    font-size: 11px; color: var(--muted-fg); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 680px) {
+    nav.topbar { padding: 12px 20px; }
+    .section { padding: 64px 20px; }
+    .project-row { grid-template-columns: 1fr; gap: 20px; }
+    .section-note { display: none; }
+    .philosophy-grid { grid-template-columns: 1fr; }
+    footer.site-footer { flex-direction: column; padding: 48px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<p class="preview-label">Static Preview · Enya Song Portfolio</p>
+
+
+<nav class="topbar">
+  <a class="logo" href="#">Enya Song</a>
+  <div class="links">
+    <a href="#">My Projects</a>
+    <a href="#">About Me</a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+
+  
+  <div class="hero-sketch">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Illustration of a product designer at a desk">
+      
+      <rect x="60" y="220" width="440" height="10" rx="4" fill="#d8d4cc"></rect>
+      
+      <rect x="180" y="90" width="200" height="130" rx="6" fill="#e8e6e1" stroke="#b5b0a8" stroke-width="2"></rect>
+      <rect x="190" y="100" width="180" height="110" rx="3" fill="#f0eeea"></rect>
+      
+      <rect x="268" y="220" width="24" height="18" rx="3" fill="#c8c4bc"></rect>
+      <rect x="250" y="237" width="60" height="6" rx="3" fill="#c8c4bc"></rect>
+      
+      <rect x="200" y="112" width="160" height="10" rx="2" fill="#d0cec9"></rect>
+      <rect x="200" y="128" width="100" height="6" rx="2" fill="#e0ddd8"></rect>
+      <rect x="200" y="140" width="75" height="6" rx="2" fill="#e0ddd8"></rect>
+      <rect x="200" y="158" width="160" height="40" rx="4" fill="#ddeaf7" stroke="#a0bcd8" stroke-width="1"></rect>
+      <text x="280" y="183" text-anchor="middle" font-size="10" fill="#4b82c0" font-family="system-ui">prototype</text>
+      
+      <rect x="200" y="232" width="110" height="24" rx="5" fill="#e0ddd6" stroke="#c8c5be" stroke-width="1.5"></rect>
+      <rect x="206" y="237" width="14" height="7" rx="2" fill="#ccc9c2"></rect>
+      <rect x="224" y="237" width="14" height="7" rx="2" fill="#ccc9c2"></rect>
+      <rect x="242" y="237" width="14" height="7" rx="2" fill="#ccc9c2"></rect>
+      <rect x="260" y="237" width="14" height="7" rx="2" fill="#ccc9c2"></rect>
+      <rect x="278" y="237" width="14" height="7" rx="2" fill="#ccc9c2"></rect>
+      <rect x="210" y="247" width="80" height="7" rx="2" fill="#ccc9c2"></rect>
+      
+      <ellipse cx="340" cy="244" rx="16" ry="12" fill="#e0ddd6" stroke="#c8c5be" stroke-width="1.5"></ellipse>
+      <line x1="340" y1="232" x2="340" y2="244" stroke="#c8c5be" stroke-width="1"></line>
+      
+      <circle cx="420" cy="125" r="22" fill="#f5c8a0" stroke="#e0aa7a" stroke-width="1.5"></circle>
+      
+      <path d="M400 115 Q420 95 440 115" stroke="#6b4c2a" stroke-width="3" fill="none" stroke-linecap="round"></path>
+      
+      <path d="M410 147 Q415 200 415 220" stroke="#4a5568" stroke-width="10" fill="none" stroke-linecap="round"></path>
+      
+      <path d="M415 175 Q360 190 310 242" stroke="#4a5568" stroke-width="7" fill="none" stroke-linecap="round"></path>
+      
+      <rect x="90" y="140" width="58" height="54" rx="3" fill="#f9e7a0" stroke="#e8d280" stroke-width="1"></rect>
+      <line x1="96" y1="155" x2="142" y2="155" stroke="#c8b840" stroke-width="1.5"></line>
+      <line x1="96" y1="163" x2="138" y2="163" stroke="#c8b840" stroke-width="1.5"></line>
+      <line x1="96" y1="171" x2="130" y2="171" stroke="#c8b840" stroke-width="1.5"></line>
+      <rect x="80" y="155" width="50" height="48" rx="3" fill="#b8e0d2" stroke="#7ec8b0" stroke-width="1"></rect>
+      <line x1="86" y1="168" x2="124" y2="168" stroke="#5aaa8a" stroke-width="1.5"></line>
+      <line x1="86" y1="176" x2="120" y2="176" stroke="#5aaa8a" stroke-width="1.5"></line>
+      
+      <line x1="320" y1="240" x2="300" y2="218" stroke="#4b82c0" stroke-width="3" stroke-linecap="round"></line>
+      
+      <path d="M148 170 Q170 165 185 158" stroke="#4b82c0" stroke-width="1.5" fill="none"></path>
+      <text x="68" y="136" font-size="9" fill="#4b82c0" font-family="Georgia,serif">research</text>
+    </svg>
+  </div>
+
+  <h1 class="hero-tagline">
+    Hi, I'm Enya — a product designer who makes <span class="whiteboard-word">complex things simple.</span>
+  </h1>
+  <p class="hero-sub">I design thoughtful, human-centred digital experiences — from early research to shipped product.</p>
+</section>
+
+
+<section class="section" id="projects">
+  <div class="section-header">
+    <div>
+      <p class="section-label">selected work</p>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <p class="section-note">Projects that reflect how I think, design, and solve.</p>
+  </div>
+
+  <div class="projects-list">
+
+    
+    <div class="project-row">
+      <div>
+        <p class="proj-meta">AI prototyping</p>
+        <h3 class="proj-title">BuildMySkincare <span class="arrow">→</span></h3>
+        <p class="proj-desc">Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.</p>
+        <div class="proj-tags">
+          <span class="tag">Design Systems</span>
+          <span class="tag">Web</span>
+          <span class="tag">Figma Make</span>
+        </div>
+      </div>
+      <div class="proj-img-wrap">
+        <div class="proj-img-placeholder">skincover.png</div>
+      </div>
+    </div>
+
+    
+    <div class="project-row">
+      <div>
+        <p class="proj-meta">proof of technology</p>
+        <h3 class="proj-title">Medical AI Quiz Generator <span class="arrow">→</span></h3>
+        <p class="proj-desc">Assist faculty members with creating quiz questions through AI generation.</p>
+        <div class="proj-tags">
+          <span class="tag">Workshop Facilitation</span>
+          <span class="tag">Prototypes</span>
+          <span class="tag">Business Strategy</span>
+        </div>
+      </div>
+      <div class="proj-img-wrap">
+        <div class="proj-img-placeholder">quizcover.png</div>
+      </div>
+    </div>
+
+    
+    <div class="project-row">
+      <div>
+        <p class="proj-meta">react to angular widget builder</p>
+        <h3 class="proj-title">Design to Code Migration <span class="arrow">→</span></h3>
+        <p class="proj-desc">Migrating design assets from Figma into a modern codebase.</p>
+        <div class="proj-tags">
+          <span class="tag">Workflow Planning</span>
+          <span class="tag">AI IDE</span>
+          <span class="tag">Figma to Code</span>
+        </div>
+      </div>
+      <div class="proj-img-wrap">
+        <div class="proj-img-placeholder">main.png</div>
+      </div>
+    </div>
+
+    
+    <div class="project-row">
+      <div>
+        <p class="proj-meta">proof of concept</p>
+        <h3 class="proj-title">Disaster Recovery Assistant <span class="arrow">→</span></h3>
+        <p class="proj-desc">AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.</p>
+        <div class="proj-tags">
+          <span class="tag">Competitive Analysis</span>
+          <span class="tag">User Research</span>
+          <span class="tag">Wireframes</span>
+        </div>
+      </div>
+      <div class="proj-img-wrap">
+        <div class="proj-img-placeholder">drcover2.png</div>
+      </div>
+    </div>
+
+    
+    <div class="project-row">
+      <div>
+        <p class="proj-meta">shipped to production</p>
+        <h3 class="proj-title">Hudl Calibration Redesign <span class="arrow">→</span></h3>
+        <p class="proj-desc">Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.</p>
+        <div class="proj-tags">
+          <span class="tag">Product Design</span>
+          <span class="tag">Design Systems</span>
+          <span class="tag">A/B Testing</span>
+        </div>
+      </div>
+      <div class="proj-img-wrap">
+        <div class="proj-img-placeholder">hudlcover.png</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="about">
+  <div class="section-header">
+    <div>
+      <p class="section-label">how I think</p>
+      <h2 class="section-title">Design Philosophy</h2>
+    </div>
+    <p class="section-note">How I approach design — balancing curiosity, clarity, and intentionality.</p>
+  </div>
+
+  <div class="philosophy-grid">
+    <div class="principle">
+      <div class="principle-num-row">
+        <span class="principle-num">01</span>
+        <div class="principle-line"></div>
+      </div>
+      <div>
+        <p class="principle-title">Making complex processes simple.</p>
+        <p class="principle-body">Complex systems are inevitable. Confusion isn't. I design so people can navigate with confidence, not hesitation.</p>
+        <p class="principle-quote">← "Rule of thumb: if you think something is clever and sophisticated beware — it is probably self-indulgence." — Don Norman</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="principle-num-row">
+        <span class="principle-num">02</span>
+        <div class="principle-line"></div>
+      </div>
+      <div>
+        <p class="principle-title">Starting with a strong foundation.</p>
+        <p class="principle-body">Design lasts when it's built patiently: listening, exploring, refining, and testing thoughtfully, all rooted in real understanding.</p>
+        <p class="principle-quote">← "The design process results in artifacts that 'are what they are' based on why they were desired in the first place." — Nelson &amp; Stolterman</p>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="principle-num-row">
+        <span class="principle-num">03</span>
+        <div class="principle-line"></div>
+      </div>
+      <div>
+        <p class="principle-title">Designing with intentionality.</p>
+        <p class="principle-body">I design with intention: supporting every design decision with research or insights is how I approach my work.</p>
+        <p class="principle-quote">← "You're not interested in what it takes to uncover most of the problems; you only care about what it takes to uncover as many problems as you can fix." — Steven Krug</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div>
+    <p class="footer-say">say hello</p>
+    <p class="footer-cta">Let's work together.</p>
+    <a class="footer-email" href="mailto:esong4318@gmail.com">esong4318@gmail.com</a>
+  </div>
+  <nav>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/enyasong/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:esong4318@gmail.com">Email</a>
+      <a href="/EnyaSong-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </nav>
+</footer>
+
+<p style="text-align:center;font-size:12px;color:#999;padding:20px 0 24px;border-top:1px solid #e2e1dc;margin-top:0">Made with IBM Bob</p>
+
+</body>
+</html>

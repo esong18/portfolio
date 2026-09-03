@@ -38,7 +38,7 @@ const processSteps: ProcessStep[] = [
   },
   {
     number: 3,
-    title: 'The Experience',
+    title: 'User Flow + Design Reviews',
     description:
       'Mentored a summer intern to lead desgining the user flow and sketches of interactions we would show through wireframes. Design reviews were held with engineers and clients for feedback and approval on feasibility and UI. The designs have been changed for this site for confidentiality.',
     image: '/projects/aiquiz/quiz-step3.png',
@@ -365,9 +365,9 @@ export default function HudlCasePage() {
             className="mb-16"
           >
             <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
-              Faculty Experience
+              Faculty Experience- Currently updating! Reach out for more info.
             </h3>
-            <div className="w-full rounded-lg overflow-hidden border border-border bg-secondary/30">
+            {/* <div className="w-full rounded-lg overflow-hidden border border-border bg-secondary/30">
               <div className="relative w-full aspect-video">
                 <iframe
                   title="Faculty experience Figma prototype"
@@ -377,7 +377,7 @@ export default function HudlCasePage() {
                   allowFullScreen
                 />
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Key Features */}
@@ -424,13 +424,13 @@ export default function HudlCasePage() {
               Student Experience
             </h3>
             <div className="relative w-full h-64 md:h-[500px] rounded-lg overflow-hidden bg-secondary/30">
-              <Image
+              {/* <Image
                 src="/projects/aiquiz/student.png"
                 alt="Student quiz screen"
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 900px"
-              />
+              /> */}
             </div>
           </motion.div>
 

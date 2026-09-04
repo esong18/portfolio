@@ -364,7 +364,7 @@ export default function HudlCasePage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
+            <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-6">
               Faculty Experience- Currently updating! Reach out for more info.
             </h3>
             {/* <div className="w-full rounded-lg overflow-hidden border border-border bg-secondary/30">
@@ -424,13 +424,13 @@ export default function HudlCasePage() {
               Student Experience
             </h3>
             <div className="relative w-full h-64 md:h-[500px] rounded-lg overflow-hidden bg-secondary/30">
-              {/* <Image
+              <Image
                 src="/projects/aiquiz/student.png"
                 alt="Student quiz screen"
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 900px"
-              /> */}
+              />
             </div>
           </motion.div>
 

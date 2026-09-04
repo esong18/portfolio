@@ -297,7 +297,7 @@ export default function HudlCasePage() {
               },
               {
                 title: 'Design & Prototyping',
-                items: ['Wireframing + Engineer Hand-Off', 'Figma Make for Iterations', 'Style Guide Creation'],
+                items: ['Wireframing + Engineer Hand-Off (Figma Dev)', 'Design Reviews', 'Style Guide Creation'],
               },
               {
                 title: 'Design Mentor',

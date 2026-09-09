@@ -20,7 +20,7 @@ const projects = [
       'Assist faculty members with creating quiz questions through AI generation.',
     tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
     image: '/projects/aiquiz/quizcover.png',
-    note: 'proof of technology',
+    note: '0 → 1 ',
     slug: 'ai-quiz-generator',
   },
   {

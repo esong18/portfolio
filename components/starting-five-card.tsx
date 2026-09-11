@@ -58,7 +58,7 @@ const players: Player[] = [
     pos: "SF",
     posColor: "#712B13",
     posBg: "#FAECE7",
-    name: "Diet coke",
+    name: "Fresca",
     trait: "The spark",
     clutch: "97%",
     color: "#D85A30",
@@ -131,7 +131,7 @@ export function StartingFiveCard() {
     : '#888'
 
   return (
-    <div className="bg-white border border-[#e8e4dc] rounded-[20px] p-7 md:p-8 max-w-[900px] w-full">
+    <div className="max-w-[900px] w-full">
       {/* Header */}
       <div className="flex items-center gap-2.5 mb-1.5">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -140,14 +140,11 @@ export function StartingFiveCard() {
           <path d="M10 2C10 2 14 6 14 10C14 14 10 18 10 18" stroke="#D85A30" strokeWidth="1" fill="none"/>
           <path d="M2 10L18 10" stroke="#D85A30" strokeWidth="1"/>
         </svg>
-        <h2 className="text-lg font-semibold text-[#1a1a1a]">Enya's Starting 5</h2>
+        <h2 className="text-lg font-semibold text-[#1a1a1a]">My Starting 5</h2>
       </div>
 
-      <p className="text-[15px] text-[#666] mb-2 leading-relaxed">
+      <p className="text-[15px] text-[#666] mb-6 leading-relaxed">
         my all-time drink lineup report.
-      </p>
-      <p className="text-sm italic text-[#d85a30] mb-6">
-        
       </p>
 
       {/* Court */}
@@ -155,9 +152,9 @@ export function StartingFiveCard() {
         {players.map((player, index) => (
           <div
             key={index}
-            className={`bg-[#f9f7f3] border rounded-[14px] p-3 sm:p-2 text-center cursor-pointer transition-all ${
-              activeIndex === index 
-                ? 'border-2' 
+            className={`bg-white border rounded-[14px] p-3 sm:p-2 text-center cursor-pointer transition-all ${
+              activeIndex === index
+                ? 'border-2'
                 : 'border-[#e8e4dc] hover:border-[#ccc]'
             }`}
             style={activeIndex === index ? { borderColor: player.color } : {}}
@@ -186,10 +183,10 @@ export function StartingFiveCard() {
           On the bench
         </div>
         <div className="flex gap-2 flex-wrap">
-          {['Fresca', 'Hojicha', 'Sparkling Water',].map((drink, i) => (
+          {['Diet Coke', 'Hojicha', 'Sparkling Water',].map((drink, i) => (
             <div
               key={i}
-              className="bg-[#f9f7f3] border border-[#e8e4dc] rounded-full px-3.5 py-1 text-xs text-[#888]"
+              className="bg-white border border-[#e8e4dc] rounded-full px-3.5 py-1 text-xs text-[#888]"
             >
               {drink}
             </div>

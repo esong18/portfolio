@@ -307,7 +307,16 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Solution</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Reimagined the calibration process and tested with beta users. Approved and shipped to the app.
+                Reimagined the calibration process and tested with beta users. Approved and shipped to the app{' '}
+                <Link
+                  href="https://support.hudl.com/s/article/calibrate-focus-flex?language=en_US&topic=Set_Up_Focus_Flex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent underline underline-offset-2 hover:opacity-70 transition-opacity"
+                >
+                  here
+                </Link>
+                .
               </p>
             </div>
           </motion.div>

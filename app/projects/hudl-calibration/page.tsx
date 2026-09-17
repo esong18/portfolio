@@ -225,8 +225,20 @@ export default function HudlCasePage() {
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
                 A New Calibration Experience
               </h2>
-              <p className="text-base mb-30 md:text-lg text-foreground/70 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
                 Turned a frustrating multi-step calibration process into a guided, user-tested experience that gets cameras set up right the first time.
+              </p>
+              <p className="text-base mb-30 md:text-lg text-foreground/70 max-w-2xl mx-auto mt-2">
+                You can view the design in app{' '}
+                <Link
+                  href="https://support.hudl.com/s/article/calibrate-focus-flex?language=en_US&topic=Set_Up_Focus_Flex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent underline underline-offset-2 hover:opacity-70 transition-opacity"
+                >
+                  here
+                </Link>
+                .
               </p>
             </motion.div>
           }

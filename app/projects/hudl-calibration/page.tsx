@@ -40,14 +40,14 @@ const processSteps: ProcessStep[] = [
     number: 2,
     title: 'Pin Design',
     description: [
-      'From this research, I found that most users struggled with the color, shape, and usability with the existing pin.',
+      'From this research, I found that most users struggled with the color, shape, and usability of the existing pin.',
     ],
     bullets: [
       'The white color of the pin got lost on a bright screen',
-      'The pin shape led users confused on if the circle or the point needed to be in the corner',
+      'The pin shape left users confused on if the circle or the point needed to be in the corner',
       'Users would drag the pin with their thumb, covering the entire pin.',
     ],
-    image: '/projects/Hudl/hudl-process-step1.png',
+    image: '/projects/Hudl/hudl-process-step2.png',
   },
   {
     number: 3,
@@ -61,7 +61,7 @@ const processSteps: ProcessStep[] = [
     number: 4,
     title: 'A/B User Testing',
     description: [
-      'The testing focused on two scenarios: one where the user plotted two pins on a time (half the field at once), and the other scenario where the user plots one point at a time. I led the testing interviews for 10 beta users.',
+      'The testing focused on two scenarios: one where the user plotted two pins at a time (half the field at once), and the other scenario where the user plots one point at a time. I led the testing interviews for 10 beta users.',
     ],
     image: '/projects/Hudl/hudl-process-step4.png',
   },
@@ -288,7 +288,7 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Client feedback on the current manual camera callibration process shows it's (very) confusing.
+                Client feedback on the current manual camera calibration process shows it's (very) confusing.
               </p>
             </div>
 

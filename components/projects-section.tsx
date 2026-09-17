@@ -22,6 +22,15 @@ const projects = [
     image: '/projects/Skincare/skincover.png',
     note: 'AI prototyping',
     slug: 'skin-analysis',
+  },
+  {
+    title: 'Hudl Calibration Redesign',
+    description:
+      'Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.',
+    tags: ['Product Design', 'Design Systems', 'A/B Testing'],
+    image: '/projects/Hudl/hudlcover.png',
+    note: 'shipped to production',
+    slug: 'hudl-calibration',
   },  
   {
     title: 'Design to Code Migration',
@@ -32,7 +41,7 @@ const projects = [
     note: 'react to angular widget builder',
     slug: 'design-to-code-migration',
   },
-    {
+  {
     title: 'Disaster Recovery Assistant',
     description:
       'AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.',
@@ -40,15 +49,6 @@ const projects = [
     image: '/projects/drassistance/drcover2.png',
     note: 'proof of concept',
     slug: 'dr-assistant',
-  },
-  {
-    title: 'Hudl Calibration Redesign',
-    description:
-      'Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.',
-    tags: ['Product Design', 'Design Systems', 'A/B Testing'],
-    image: '/projects/Hudl/hudlcover.png',
-    note: 'shipped to production',
-    slug: 'hudl-calibration',
   },
   // Additional projects can be added here
 ]

@@ -214,9 +214,9 @@ const processSteps: ProcessStep[] = [
     number: 2,
     title: 'Ideation > Experience',
     description:
-      'My research informed me of the gaps between different sites: no one had it all. From this, I drafted potentials flows for how a user would interact with the site, narrowing down to three main areas that were most commonly searched for.',
+      'My research informed me of the gaps between different sites: no one had it all. From this, I drafted potential flows for how a user would interact with the site, narrowing down to three main areas that were most commonly searched for.',
     bullets: [
-      'Ingredient compatability',
+      'Ingredient compatibility',
       'Creating a personalized routine',
       'Routines from others with similar skin concerns.',
     ],
@@ -233,7 +233,7 @@ const processSteps: ProcessStep[] = [
     number: 4,
     title: 'AI Prototyping',
     description:
-      'With the wireframes I had polished, I utilzied Figma Make to help me iterate on my designs and fill in the blanks. It helped populate text, created a more structured look, and helped give inspiration for the next iteration.',
+      'With the wireframes I had polished, I utilized Figma Make to help me iterate on my designs and fill in the blanks. It helped populate text, created a more structured look, and helped give inspiration for the next iteration.',
     image: '/projects/Skincare/skin-step4.png',
   },
 ]
@@ -523,7 +523,7 @@ export default function HudlCasePage() {
             <p className="font-handwritten text-accent/80 text-lg mb-2">outcomes</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">The Prototypes</h2>
             <p className="text-foreground/80 leading-relaxed">
-              After going down my own skincare rabbit hole, I noticed a gap: no tool combined routine building, ingredient checking, and compatibility analysis in one place. My solution was a prototyped website that addressed the biggest concerns: craft a personalized routine, view community routines, and check the compatibility of ingredients in your current routine. This was a self guided project to grow my familiarity designing with AI and to create a passion project for my interests- the design is consistently being refined in my free time.
+              After going down my own skincare rabbit hole, I noticed a gap: no tool combined routine building, ingredient checking, and compatibility analysis in one place. My solution was a prototyped website that addressed the biggest concerns: craft a personalized routine, view community routines, and check the compatibility of ingredients in your current routine. This was a self-guided project to grow my familiarity designing with AI and to create a passion project for my interests.
             </p>
           </motion.div>
 
@@ -547,11 +547,11 @@ export default function HudlCasePage() {
             {[
               {
                 title: 'Personalized Skincare Routine (Slide 1-2)',
-                description: 'After a short quiz, the app curates a routine based on user concerns and climate—offering clear direction in an otherwise overwhelming product landscape..',
+                description: 'After a short quiz, the app curates a routine based on user concerns and climate—offering clear direction in an otherwise overwhelming product landscape.',
               },
               {
                 title: 'Ingredient Compatability Analysis (Slide 3-4)',
-                description: 'Because some ingredients enhance absorption while others conflict, the compatibility insights and shows users how their specific routine performs.',
+                description: 'Because some ingredients enhance absorption while others conflict, the compatibility analysis shows users how their specific routine performs.',
               },
               {
                 title: 'Community Routines (Slide 5)',

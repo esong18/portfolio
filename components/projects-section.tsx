@@ -5,16 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const projects = [
-      {
-    title: 'BuildMySkincare',
-    description:
-      'Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.',
-    tags: ['Design Systems', 'Web', 'Figma Make'],
-    image: '/projects/Skincare/skincover.png',
-    note: 'AI prototyping',
-    slug: 'skin-analysis',
-  },  
-    {
+  {
     title: 'Medical AI Quiz Generator',
     description:
       'Assist faculty members with creating quiz questions through AI generation.',
@@ -23,6 +14,15 @@ const projects = [
     note: '0 → 1 ',
     slug: 'ai-quiz-generator',
   },
+  {
+    title: 'BuildMySkincare',
+    description:
+      'Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.',
+    tags: ['Design Systems', 'Web', 'Figma Make'],
+    image: '/projects/Skincare/skincover.png',
+    note: 'AI prototyping',
+    slug: 'skin-analysis',
+  },  
   {
     title: 'Design to Code Migration',
     description:

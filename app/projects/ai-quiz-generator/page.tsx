@@ -353,6 +353,7 @@ export default function HudlCasePage() {
             </ul>
             <p className="mt-3 text-foreground/80">
               This solution follows department goals of a flipped classroom, where medical students gain initial exposure to new material outside of class and use class time for higher-order activities. Delivered as working code and design specs, the prototype became part of the client's grant submission.
+            </p>
           </motion.div>
 
           {/* Faculty Experience */}

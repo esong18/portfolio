@@ -40,14 +40,14 @@ const processSteps: ProcessStep[] = [
     number: 3,
     title: 'Defining the Steps',
     description:
-      'Authored a lab guide detailing the full migration process — making it repeatable and executable by others.',
+      'Mapped the flow that the AI IDE assistant would take, and created prompts for users accordingly.',
     image: '/projects/design-to-code/workflow.png',
   },
   {
     number: 4,
     title: 'Documentation',
     description:
-      'Transformed sketches to wireframes on Figma, and coordinating with a front-end developer to bring our designs to life.',
+      'Authored a lab guide detailing the full migration process, from prompting the AI assistant through to CI/CD pipeline integration, making each conversion repeatable and executable by any developer on the team.',
     image: '/projects/design-to-code/guide-white.png',
   },
 ]
@@ -296,11 +296,11 @@ export default function HudlCasePage() {
               },
               {
                 title: 'Workflow Design (with Engineers)',
-                items: ['Diagrammed the conversion flow', 'Designed step-by-step guide for the AI IDE to execute'],
+                items: ['Diagrammed the conversion flow', 'Designed step-by-step guide for the AI IDE assistant to execute', 'Mapped handoff into the CI/CD pipeline'],
               },
               {
                 title: 'Documentation',
-                items: ['Authored a lab guide for the migration process', 'Final playback back to client'],
+                items: ['Authored a lab guide for the migration process', 'Final playback to client'],
               },
 
             ].map((role, i) => (
@@ -384,7 +384,7 @@ export default function HudlCasePage() {
               },
               {
                 title: 'Independent Deployment and Adaptability to Widget Variations',
-                description: 'Micro-UI components can be independently deployed andadjusted without disrupting upstream systems.',
+                description: 'What had been a hand-coded conversion for every widget became a guided, repeatable process. The client&rsquo;s IT team adopted the framework, with projected savings of ~7,980 engineering hours annually (3.8 FTE).',
               },
             ].map((feature, i) => (
               <motion.div

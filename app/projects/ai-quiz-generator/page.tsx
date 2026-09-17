@@ -33,14 +33,14 @@ const processSteps: ProcessStep[] = [
     number: 2,
     title: 'The Data',
     description:
-      'Partnered with engineers to explore the types of data we had access to to train AI models. This helped narrow our project scope to meet expectations and timelines.',
+      'Partnered with engineers to explore supplied data sources needed to train AI models. This helped narrow our project scope to meet expectations and timelines.',
     image: '/projects/aiquiz/quiz-step2.png',
   },
   {
     number: 3,
     title: 'User Flow + Design Reviews',
     description:
-      'Mentored a summer intern to lead desgining the user flow and sketches of interactions we would show through wireframes. Design reviews were held with engineers and clients for feedback and approval on feasibility and UI. The designs have been changed for this site for confidentiality.',
+      'Directed the user flow and interaction sketches, mentoring a summer intern through the work while owning the final design decisions. Design reviews with engineers and clients confirmed feasibility and UI direction.',
     image: '/projects/aiquiz/quiz-step3.png',
   },
   {
@@ -301,7 +301,7 @@ export default function HudlCasePage() {
               },
               {
                 title: 'Design Mentor',
-                items: ['Mentored a summer intern throughout the process, working to create designs together and present it to the client.'],
+                items: ['Mentored a summer intern through user flow and sketch work, reviewing their designs and pairing with them to present to the client.'],
               },
 
             ].map((role, i) => (
@@ -352,8 +352,7 @@ export default function HudlCasePage() {
               <li>Students get immediate feedback on quiz performance</li>
             </ul>
             <p className="mt-3 text-foreground/80">
-              This solution follows department goals of a flipped classroom, where medical students gain initial exposure to new material outside of class and use class time for higher-order activities. Final design was non-committal, intended to help demonstrate a proof of technology.
-            </p>
+              This solution follows department goals of a flipped classroom, where medical students gain initial exposure to new material outside of class and use class time for higher-order activities. Delivered as working code and design specs, the prototype became part of the client's grant submission.
           </motion.div>
 
           {/* Faculty Experience */}

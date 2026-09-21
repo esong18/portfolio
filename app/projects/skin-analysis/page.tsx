@@ -18,7 +18,7 @@ function ImageCarousel() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
   const images = [
     { src: '/projects/Skincare/quiz.png', alt: 'Quiz questionnaire' },
-    { src: '/projects/Skincare/quiz-results.png', alt: 'Questionnaire results' },
+    { src: '/projects/Skincare/Quiz-results.png', alt: 'Questionnaire results' },
     { src: '/projects/Skincare/analysis-morning.png', alt: 'Routine Analysis- 1' },
     { src: '/projects/Skincare/analysis-night.png', alt: 'Routine Analysis- 2' },
     { src: '/projects/Skincare/community.png', alt: 'Community Routines' },

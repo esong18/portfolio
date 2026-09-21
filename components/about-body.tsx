@@ -55,7 +55,7 @@ export function AboutBody() {
 
           <div className="space-y-4">
             <p className="text-base text-foreground/80 leading-relaxed">
-              You can find me eating my way through the city, exploring nature outside the city, or spending my evening as a hobbyist nail artist. Occasionally I&apos;ll play an aggressively average game of basketball or document my memroies in video diaries. 📸
+              You can find me eating my way through the city, exploring nature outside the city, or spending my evening as a hobbyist nail artist. Occasionally I&apos;ll play an aggressively average game of basketball or document my memories in video diaries. 📸
             </p>
             <p className="text-base text-foreground/80 leading-relaxed">
                I&apos;m also never far from a fun drink. Check out my scouting report below…

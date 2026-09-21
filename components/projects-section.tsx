@@ -36,7 +36,7 @@ const projects = [
     title: 'Design to Code Migration',
     description:
       'Migrating design assets from Figma into a modern codebase.',
-    tags: ['Workflow Planning', 'AI IDE', 'Figma to Code'],
+    tags: ['Workflow Planning', 'IDE AI Assistant', 'Figma to Code'],
     image: '/projects/design-to-code/main.png',
     note: 'react to angular widget builder',
     slug: 'design-to-code-migration',

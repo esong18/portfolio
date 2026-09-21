@@ -365,7 +365,7 @@ export default function HudlCasePage() {
             className="mb-16"
           >
             <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-6">
-              Faculty Experience- Currently updating! Reach out for more info.
+              Faculty Experience- Currently editing screens for client confidentiality. Reach out for more info.
             </h3>
             {/* <div className="w-full rounded-lg overflow-hidden border border-border bg-secondary/30">
               <div className="relative w-full aspect-video">

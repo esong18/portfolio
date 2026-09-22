@@ -447,42 +447,6 @@ export function ScrollFigure() {
         </div>
       </div>
 
-      {/* Ink streak — faint trail, fades out as pen approaches its landing spot */}
-      {isFalling && penStart && penTarget.tSection < 1 && (
-        <svg
-          style={{
-            position: "fixed",
-            inset: 0,
-            width: "100vw",
-            height: "100vh",
-            pointerEvents: "none",
-            zIndex: 51,
-            overflow: "visible",
-            // fade the whole streak to 0 over the last 20% of the fall
-            opacity: Math.max(0, 1 - (penTarget.tSection - 0.8) / 0.2),
-          }}
-          aria-hidden="true"
-        >
-          <defs>
-            <linearGradient
-              id="streak-grad"
-              x1={fallStart.cx} y1={fallStart.cy}
-              x2={penFixedCX}   y2={penFixedCY}
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0%"   stopColor={BLUE} stopOpacity={0.18} />
-              <stop offset="100%" stopColor={BLUE} stopOpacity={0}    />
-            </linearGradient>
-          </defs>
-          <line
-            x1={fallStart.cx} y1={fallStart.cy}
-            x2={penFixedCX}   y2={penFixedCY}
-            stroke="url(#streak-grad)"
-            strokeWidth={1.5}
-            strokeLinecap="round"
-          />
-        </svg>
-      )}
 
       {/* Pen — fixed layer only during phase 2 (falling) */}
       {isFalling && (

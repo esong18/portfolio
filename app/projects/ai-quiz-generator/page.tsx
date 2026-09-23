@@ -19,7 +19,6 @@ function FacultyImageCarousel() {
 
   const images = [
     { src: '/projects/aiquiz/Faculty1.png', alt: 'Faculty screen 1' },
-    { src: '/projects/aiquiz/Faculty2.png', alt: 'Faculty screen 2' },
     { src: '/projects/aiquiz/Faculty3.png', alt: 'Faculty screen 3' },
     { src: '/projects/aiquiz/Faculty4.png', alt: 'Faculty screen 4' },
     { src: '/projects/aiquiz/Faculty5.png', alt: 'Faculty screen 5' },
@@ -55,7 +54,7 @@ function FacultyImageCarousel() {
   return (
     <>
       <div className="w-full space-y-4">
-        <div className="relative w-full h-64 md:h-[500px] rounded-lg overflow-hidden bg-secondary/30">
+        <div className="relative w-full h-64 md:h-[500px] rounded-lg overflow-hidden">
           <motion.div
             key={activeIndex}
             initial={{ opacity: 0, scale: 0.995 }}
@@ -598,7 +597,7 @@ export default function HudlCasePage() {
             <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
               Student Experience
             </h3>
-            <div className="relative w-full h-64 md:h-[500px] rounded-lg overflow-hidden bg-secondary/30">
+            <div className="relative w-full h-64 md:h-[500px] rounded-lg overflow-hidden">
               <Image
                 src="/projects/aiquiz/student.png"
                 alt="Student quiz screen"

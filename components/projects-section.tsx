@@ -41,15 +41,15 @@ const projects = [
     note: 'react to angular widget builder',
     slug: 'design-to-code-migration',
   },
-  {
-    title: 'Disaster Recovery Assistant',
-    description:
-      'AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.',
-    tags: ['Competitive Analysis', 'User Research', 'Wireframes' ],
-    image: '/projects/drassistance/drcover2.png',
-    note: 'proof of concept',
-    slug: 'dr-assistant',
-  },
+  // {
+  //   title: 'Disaster Recovery Assistant',
+  //   description:
+  //     'AI assistant designed to aid disaster recovery efforts for state residents via mobile SOS texting.',
+  //   tags: ['Competitive Analysis', 'User Research', 'Wireframes' ],
+  //   image: '/projects/drassistance/drcover2.png',
+  //   note: 'proof of concept',
+  //   slug: 'dr-assistant',
+  // },
   // Additional projects can be added here
 ]
 

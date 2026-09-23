@@ -7,7 +7,192 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { ContainerScroll } from '@/components/container-scroll'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
-import { ArrowUp, ArrowLeft } from 'lucide-react'
+import { ArrowUp, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
+
+// ──────────────────────────────────────────────────────────────────────────────
+// FACULTY IMAGE CAROUSEL
+// ──────────────────────────────────────────────────────────────────────────────
+
+function FacultyImageCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+  const images = [
+    { src: '/projects/aiquiz/Faculty1.png', alt: 'Faculty screen 1' },
+    { src: '/projects/aiquiz/Faculty2.png', alt: 'Faculty screen 2' },
+    { src: '/projects/aiquiz/Faculty3.png', alt: 'Faculty screen 3' },
+    { src: '/projects/aiquiz/Faculty4.png', alt: 'Faculty screen 4' },
+    { src: '/projects/aiquiz/Faculty5.png', alt: 'Faculty screen 5' },
+    { src: '/projects/aiquiz/Faculty6.png', alt: 'Faculty screen 6' },
+  ]
+
+  useEffect(() => {
+    if (expandedIndex === null) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setExpandedIndex(null)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [expandedIndex])
+
+  const showPrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+  }
+
+  const showNext = () => {
+    setActiveIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+  }
+
+  const goToSlide = (nextIndex: number) => {
+    if (nextIndex === activeIndex) return
+    setActiveIndex(nextIndex)
+  }
+
+  return (
+    <>
+      <div className="w-full space-y-4">
+        <div className="relative w-full h-64 md:h-[500px] rounded-lg overflow-hidden bg-secondary/30">
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0, scale: 0.995 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: 'spring', stiffness: 380, damping: 30, mass: 0.35 }}
+            className="absolute inset-0 w-full h-full group"
+          >
+            <Image
+              src={images[activeIndex].src}
+              alt={images[activeIndex].alt}
+              fill
+              className="object-contain"
+              priority
+              sizes="(max-width: 768px) 100vw, 900px"
+            />
+          </motion.div>
+          {/* Expand Icon */}
+          <button
+            onClick={() => setExpandedIndex(activeIndex)}
+            className="absolute z-10 bottom-4 right-4 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-foreground/20 text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100"
+            aria-label="Expand image"
+            title="Expand image"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Carousel controls */}
+        <div className="flex items-center justify-center gap-4">
+          <button
+            onClick={showPrev}
+            className="p-2 rounded-full bg-background/80 backdrop-blur-sm border border-foreground/20 text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+            aria-label="Previous image"
+            title="Previous image"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <div className="flex justify-center gap-2">
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => goToSlide(idx)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  idx === activeIndex ? 'bg-accent w-8' : 'bg-border hover:bg-muted-foreground'
+                }`}
+                aria-label={`View image ${idx + 1}`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={showNext}
+            className="p-2 rounded-full bg-background/80 backdrop-blur-sm border border-foreground/20 text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+            aria-label="Next image"
+            title="Next image"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Image counter */}
+        <div className="text-center text-xs text-muted-foreground">
+          {activeIndex + 1} of {images.length}
+        </div>
+      </div>
+
+      {/* Lightbox Modal */}
+      {expandedIndex !== null && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setExpandedIndex(null)}
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-4xl max-h-[90vh]"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setExpandedIndex(null)}
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-foreground/20 text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+              aria-label="Close expanded image"
+              title="Close"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 6l-12 12M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Expanded Image */}
+            <div className="relative w-full h-[70vh] max-h-[80vh] rounded-lg overflow-hidden bg-background border border-foreground/10">
+              <Image
+                src={images[expandedIndex].src}
+                alt={images[expandedIndex].alt}
+                fill
+                className="object-contain"
+                sizes="90vw"
+              />
+            </div>
+
+            {/* Image Counter in Modal */}
+            <div className="text-center text-sm text-foreground/70 mt-4">
+              {expandedIndex + 1} of {images.length}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </>
+  )
+}
 
 // ──────────────────────────────────────────────────────────────────────────────
 // PROCESS STEPPER WITH SCROLL INDICATOR (No Annotations)
@@ -24,31 +209,31 @@ interface ProcessStep {
 const processSteps: ProcessStep[] = [
   {
     number: 1,
-    title: 'Workshop Facilitations',
+    title: 'Understanding the User',
     description:
-      'Facilitated a client workshop to identify current/desired experiences for end users (students, faculty) and current data sources.',
+    'Facilitated a client workshop to identify current/desired experiences for end users (students, faculty), discussing platform goals, current pains, and success criteria. Mapped out access to data sources (course content) that would be used to train the AI model.',
     image: '/projects/aiquiz/quiz-step1.png',
   },
   {
     number: 2,
-    title: 'The Data',
+    title: 'Brand Guide + User Journey',
     description:
-      'Partnered with engineers to explore supplied data sources needed to train AI models. This helped narrow our project scope to meet expectations and timelines.',
-    image: '/projects/aiquiz/quiz-step2.png',
-  },
-  {
-    number: 3,
-    title: 'User Flow + Design Reviews',
-    description:
-      'Directed the user flow and interaction sketches, mentoring a summer intern through the work while owning the final design decisions. Design reviews with engineers and clients confirmed feasibility and UI direction.',
+      'To set the foundation for design, I built a Figma brand guide with variables for color, typography, and component variants for fast, consistent prototyping.I advocated for building within the client&apos;s design system, workshopped faculty and student user flows so the screens would reflect each group&apos;s real needs, and mentored an intern through the process, from structuring the design system to turning flows into design decisions.',
     image: '/projects/aiquiz/quiz-step3.png',
   },
   {
-    number: 4,
-    title: 'The Design',
+    number: 3,
+    title: 'Sketches to Prototypes',
     description:
-      'Transformed sketches to wireframes on Figma, and coordinating with a front-end developer to bring our designs to life. Utilized Figma dev mode for engineer hand off.',
+      'Utilized Figma Make to take sketches to prototypes, leading esign reviews with engineers and clients throughout to align on feasibility and UI direction.',
     image: '/projects/aiquiz/quiz-step4.png',
+  },
+  {
+    number: 4,
+    title: 'Engineer Hand Off',
+    description:
+      'Coordinated with a front-end developer to turn the designs into production production-ready code. Worked with AI engineers to connect the front end to the back end (an AI model served through FastAPI endpoints that generated the quiz questions).',
+    image: '/projects/aiquiz/student.png',
   },
 ]
 
@@ -245,7 +430,7 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                Faculty members spend too much time on creating, grading, and revising course material but they still want to support student learning through weekly quizzes.
+                Faculty members want to create a low-stakes quiz platform for students for retention and understanding, but lack the time on top of all their other tasks.
               </p>
               <p className="text-foreground/80 leading-relaxed">
 
@@ -255,7 +440,7 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Solution</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Utilized IBM's AI technology to generate questions for student recall and understanding of classroom concepts.
+                Designed the concept to production-ready prototypes of an AI platform that generates quiz questions with human approval.
               </p>
               {/* <div className="mt-6 flex flex-wrap gap-2">
                 {['Product Design', 'Mobile UX', 'A/B Testing'].map((tag) => (
@@ -293,15 +478,15 @@ export default function HudlCasePage() {
             {[
               {
                 title: 'Workshop Facilitation',
-                items: ['Led client workshop', 'As-is and To-be scenarios', 'Understanding existing data'],
+                items: ['Led client workshop', 'As-is and To-be scenarios', 'Understanding course content (what the AI draws on)'],
               },
               {
                 title: 'Design & Prototyping',
-                items: ['Wireframing + Engineer Hand-Off (Figma Dev)', 'Design Reviews', 'Style Guide Creation'],
+                items: ['Wireframing + Engineer Hand-Off', 'Design Reviews', 'Style Guide Creation'],
               },
               {
                 title: 'Design Mentor',
-                items: ['Mentored a summer intern through user flow and sketch work, reviewing their designs and pairing with them to present to the client.'],
+                items: ['Directly mentored a summer intern through user flows, sketch work, prototypes, and client feedback sessions.'],
               },
 
             ].map((role, i) => (
@@ -364,20 +549,10 @@ export default function HudlCasePage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-6">
-              Faculty Experience- Currently editing screens for client confidentiality. Reach out for more info.
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
+              Faculty Experience
             </h3>
-            {/* <div className="w-full rounded-lg overflow-hidden border border-border bg-secondary/30">
-              <div className="relative w-full aspect-video">
-                <iframe
-                  title="Faculty experience Figma prototype"
-                  src="https://embed.figma.com/proto/vb3acof1lOEZIj7bLqx0P0/AI-Quiz?node-id=1-1174&viewport=349%2C429%2C0.09&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A1174&page-id=0%3A1&embed-host=share"
-                  className="absolute inset-0 w-full h-full"
-                  style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
-                  allowFullScreen
-                />
-              </div>
-            </div> */}
+            <FacultyImageCarousel />
           </motion.div>
 
           {/* Key Features */}

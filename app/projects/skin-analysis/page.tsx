@@ -67,6 +67,7 @@ function ImageCarousel() {
               fill
               className="object-contain"
               priority
+              sizes="(max-width: 768px) 100vw, 900px"
             />
           </motion.div>
             {/* Expand Icon */}
@@ -197,7 +198,7 @@ function ImageCarousel() {
 interface ProcessStep {
   number: number
   title: string
-  description: string
+  description: string | string[]
   image: string
   bullets?: string[]
 }
@@ -205,16 +206,16 @@ interface ProcessStep {
 const processSteps: ProcessStep[] = [
   {
     number: 1,
-    title: 'Competitive Analysis',
+    title: 'Competitive and Comparative Analysis',
     description:
-      'I looked at existing skincare apps, websites, and how people often asked skincare questions. The idea for this project came from many hours on skincare subreddits.',
+      'I explored two apps, Skinbliss and Trove Skin, chosen for their popularity on Reddit, where I find users give the most honest feedback. Each solved one piece of the puzzle, but none brought routine building, ingredient lookup, and compatibility checking together, and many tried to do too much at once. I also struggled to find recommendations that weren&apos;t saturated with ads. Beyond skincare apps, I studied personalization quiz for guiding selection and seeing what was trending.',
     image: '/projects/Skincare/skin-step1.png',
   },
   {
     number: 2,
-    title: 'Ideation > Experience',
+    title: 'User Flows and Design Trade-offs',
     description:
-      'My research informed me of the gaps between different sites: no one had it all. From this, I drafted potential flows for how a user would interact with the site, narrowing down to three main areas that were most commonly searched for.',
+      'I wanted to keep the site simple, focused on three core capabilities: analyze, build, and share. I mapped how someone would move through each, and chose web over mobile because people wanted quick answers, not another app to download.',
     bullets: [
       'Ingredient compatibility',
       'Creating a personalized routine',
@@ -224,16 +225,18 @@ const processSteps: ProcessStep[] = [
   },
   {
     number: 3,
-    title: 'Wireframes',
+    title: 'Wireframes, Style Guides, and Feasibility',
     description:
-      'I created a style guide to establish an identity for the site, and used that to draft initial wireframes. I worked with a software engineer to determine feasibility for different features — because good design doesn\'t need to be complicated.',
+      'I built a style guide to give the site its own identity, then shaped the first wireframes around it. Throughout, I worked with a software engineer to make sure the design could actually function, including how product and ingredient data would be stored so results could populate.',
     image: '/projects/Skincare/skin-step3.png',
   },
   {
     number: 4,
-    title: 'AI Prototyping',
-    description:
-      'With the wireframes I had polished, I utilized Figma Make to help me iterate on my designs and fill in the blanks. It helped populate text, created a more structured look, and helped give inspiration for the next iteration.',
+    title: 'Prototyping and Concept Testing',
+    description: [
+      'I used Figma Make to raise the fidelity of my wireframes and fill in placeholder text, while keeping the design decisions my own. I then tested the concept with three potential users, including a dermatology nurse. The nurse stressed that compatibility information should link to its sources, or even carry professional approval, so users can trust it. Testers also flagged too many buttons and a skin type quiz too simplified for people unsure of their type.',
+      "I'm now building the compatibility checker as a standalone first version, with every ingredient rule tied to a cited source.",
+    ],
     image: '/projects/Skincare/skin-step4.png',
   },
 ]
@@ -292,9 +295,19 @@ function ProcessSection() {
                   <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 md:mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-foreground/80 mb-0">
-                    {step.description}
-                  </p>
+                  {Array.isArray(step.description) ? (
+                    <div className="space-y-3">
+                      {step.description.map((line, i) => (
+                        <p key={i} className="text-sm leading-relaxed text-foreground/80">
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm leading-relaxed text-foreground/80 mb-0">
+                      {step.description}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -441,7 +454,7 @@ export default function HudlCasePage() {
             <div>
               <h3 className="font-semibold text-foreground mb-3">The Solution</h3>
               <p className="text-foreground/80 leading-relaxed">
-                I prototyped a webapp to address these gaps.
+                I prototyped a webapp built around three core actions: analyze, build, and share.
               </p>
               {/* <div className="mt-6 flex flex-wrap gap-2">
                 {['Product Design', 'Mobile UX', 'A/B Testing'].map((tag) => (
@@ -485,6 +498,10 @@ export default function HudlCasePage() {
                 title: 'Design & Prototyping',
                 items: ['Wireframing', 'Figma Make for Iterations', 'Style Guide Creation'],
               },
+              {
+                title: 'Deployment',
+                items: ['(Currently in progress via Cursor)'],
+              },
 
             ].map((role, i) => (
               <motion.div
@@ -523,7 +540,7 @@ export default function HudlCasePage() {
             <p className="font-handwritten text-accent/80 text-lg mb-2">outcomes</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">The Prototypes</h2>
             <p className="text-foreground/80 leading-relaxed">
-              After going down my own skincare rabbit hole, I noticed a gap: no tool combined routine building, ingredient checking, and compatibility analysis in one place. My solution was a prototyped website that addressed the biggest concerns: craft a personalized routine, view community routines, and check the compatibility of ingredients in your current routine. This was a self-guided project to grow my familiarity designing with AI and to create a passion project for my interests.
+              This project started with my own skincare rabbit hole. The more I looked for advice for my own products, the more I noticed the same gap everywhere I looked: routine building lived in one app, ingredient checking in another, compatibility analysis somewhere else entirely… never all in the same place.  So, I set out to build an app for myself. What began as a way to grow my familiarity designing with AI became a chance to take a problem I genuinely cared about and shape it into a product from the ground up.
             </p>
           </motion.div>
 
@@ -555,7 +572,7 @@ export default function HudlCasePage() {
               },
               {
                 title: 'Community Routines (Slide 5)',
-                description: 'Users tend to trust widely used products that directly address their concerns. I wanted a feature that showed community-backed options in a space separate from paid promotions.',
+                description: 'Trending products are often driven by sponsorships, so I originally included a trending page before testing showed it could invite the same problem. I replaced it with community routines, where popular products appear as part of real people&apos;s routines, separate from paid promotion. ',
               },
 
             ].map((feature, i) => (

@@ -220,7 +220,7 @@ const processSteps: ProcessStep[] = [
     number: 2,
     title: 'Brand Guide + User Journey',
     description:
-      'To set the foundation for design, I built a Figma brand guide with variables for color, typography, and component variants for fast, consistent prototyping.I advocated for building within the client&apos;s design system, workshopped faculty and student user flows so the screens would reflect each group&apos;s real needs, and mentored an intern through the process, from structuring the design system to turning flows into design decisions.',
+      'To set the foundation for design, I built a Figma brand guide with variables for color, typography, and component variants for fast, consistent prototyping.I advocated for building within the client\'s design system, workshopped faculty and student user flows so the screens would reflect each group\'s real needs, and mentored an intern through the process, from structuring the design system to turning flows into design decisions.',
     image: '/projects/aiquiz/quiz-step3.png',
   },
   {

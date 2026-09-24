@@ -213,21 +213,21 @@ const processSteps: ProcessStep[] = [
     number: 1,
     title: 'Understanding the User',
     description:
-    'Facilitated a client workshop to identify current/desired experiences for end users (students, faculty), discussing platform goals, current pains, and success criteria. Mapped out access to data sources (course content) that would be used to train the AI model.',
+    'Facilitated a client workshop to identify current/desired experiences for end users (students, faculty), discussing platform goals, current pains, and success criteria. Also mapped out access to data sources (course content) that would be used to train the AI model.',
     image: '/projects/aiquiz/quiz-step1.png',
   },
   {
     number: 2,
     title: 'Brand Guide + User Journey',
     description:
-      'To set the foundation for design, I built a Figma brand guide with variables for color, typography, and component variants for fast, consistent prototyping.I advocated for building within the client\'s design system, workshopped faculty and student user flows so the screens would reflect each group\'s real needs, and mentored an intern through the process, from structuring the design system to turning flows into design decisions.',
+      'To set the foundation for design, I built a Figma brand guide with variables for color, typography, and component variants for fast, consistent prototyping. I advocated for building within the client\'s design system, workshopped faculty and student user flows so the screens would reflect each group\'s real needs, and mentored an intern through the process.',
     image: '/projects/aiquiz/quiz-step3.png',
   },
   {
     number: 3,
     title: 'Sketches to Prototypes',
     description:
-      'Turned sketches to prototypes for the faculty and student flow, using Figma Make for rapid prototyping for polish and text generation. Led design reviews with engineers and clients throughout to align on feasibility and UI direction.',
+      'Turned sketches to prototypes for the faculty and student flow, using Figma Make for rapid prototyping, polish, and text generation. Led design reviews with engineers and clients throughout to align on feasibility and UI direction.',
     image: '/projects/aiquiz/quiz-step4.png',
     imageHeight: 'h-80 md:h-[480px]',
   },

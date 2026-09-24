@@ -208,7 +208,7 @@ const processSteps: ProcessStep[] = [
     number: 1,
     title: 'Competitive and Comparative Analysis',
     description:
-      'I explored two apps, Skinbliss and Trove Skin, chosen for their popularity on Reddit, where I find users give the most honest feedback. Each solved one piece of the puzzle, but none brought routine building, ingredient lookup, and compatibility checking together, and many tried to do too much at once. I also struggled to find recommendations that weren&apos;t saturated with ads. Beyond skincare apps, I studied personalization quiz for guiding selection and seeing what was trending.',
+      'I explored two apps, Skinbliss and Trove Skin, chosen for their popularity on Reddit, where I find users give the most honest feedback. Each solved one piece of the puzzle, but none brought routine building, ingredient lookup, and compatibility checking together, and many tried to do too much at once. I also struggled to find recommendations that weren\'t saturated with ads. Beyond skincare apps, I studied personalization quiz for guiding selection and seeing what was trending.',
     image: '/projects/Skincare/skin-step1.png',
   },
   {
@@ -572,7 +572,7 @@ export default function HudlCasePage() {
               },
               {
                 title: 'Community Routines (Slide 5)',
-                description: 'Trending products are often driven by sponsorships, so I originally included a trending page before testing showed it could invite the same problem. I replaced it with community routines, where popular products appear as part of real people&apos;s routines, separate from paid promotion. ',
+                description: 'Trending products are often driven by sponsorships, so I originally included a trending page before testing showed it could invite the same problem. I replaced it with community routines, where popular products appear as part of real people\'s routines, separate from paid promotion. ',
               },
 
             ].map((feature, i) => (

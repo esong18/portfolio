@@ -198,7 +198,7 @@ function ImageCarousel() {
 interface ProcessStep {
   number: number
   title: string
-  description: string | string[]
+  description: string
   image: string
   bullets?: string[]
 }
@@ -208,7 +208,7 @@ const processSteps: ProcessStep[] = [
     number: 1,
     title: 'Competitive and Comparative Analysis',
     description:
-      'I explored two apps, Skinbliss and Trove Skin, chosen for their popularity on Reddit, where I find users give the most honest feedback. Each solved one piece of the puzzle, but none brought routine building, ingredient lookup, and compatibility checking together, and many tried to do too much at once. I also struggled to find recommendations that weren\'t saturated with ads. Beyond skincare apps, I studied personalization quiz for guiding selection and seeing what was trending.',
+      'I explored two apps, Skinbliss and Trove Skin, chosen for their popularity on Reddit, where I find users give the most honest feedback. Each solved one piece of the puzzle, but none brought routine building, ingredient lookup, and compatibility checking together, and many tried to do too much at once. I also struggled to find recommendations that weren&apos;t saturated with ads. Beyond skincare apps, I studied personalization quiz for guiding selection and seeing what was trending.',
     image: '/projects/Skincare/skin-step1.png',
   },
   {
@@ -233,10 +233,8 @@ const processSteps: ProcessStep[] = [
   {
     number: 4,
     title: 'Prototyping and Concept Testing',
-    description: [
+    description:
       'I used Figma Make to raise the fidelity of my wireframes and fill in placeholder text, while keeping the design decisions my own. I then tested the concept with three potential users, including a dermatology nurse. The nurse stressed that compatibility information should link to its sources, or even carry professional approval, so users can trust it. Testers also flagged too many buttons and a skin type quiz too simplified for people unsure of their type.',
-      "I'm now building the compatibility checker as a standalone first version, with every ingredient rule tied to a cited source.",
-    ],
     image: '/projects/Skincare/skin-step4.png',
   },
 ]
@@ -295,19 +293,9 @@ function ProcessSection() {
                   <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 md:mb-3">
                     {step.title}
                   </h3>
-                  {Array.isArray(step.description) ? (
-                    <div className="space-y-3">
-                      {step.description.map((line, i) => (
-                        <p key={i} className="text-sm leading-relaxed text-foreground/80">
-                          {line}
-                        </p>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-sm leading-relaxed text-foreground/80 mb-0">
-                      {step.description}
-                    </p>
-                  )}
+                  <p className="text-sm leading-relaxed text-foreground/80 mb-0">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             </div>
@@ -572,7 +560,7 @@ export default function HudlCasePage() {
               },
               {
                 title: 'Community Routines (Slide 5)',
-                description: 'Trending products are often driven by sponsorships, so I originally included a trending page before testing showed it could invite the same problem. I replaced it with community routines, where popular products appear as part of real people\'s routines, separate from paid promotion. ',
+                description: 'Trending products are often driven by sponsorships, so I originally included a trending page before testing showed it could invite the same problem. I replaced it with community routines, where popular products appear as part of real people&apos;s routines, separate from paid promotion. ',
               },
 
             ].map((feature, i) => (

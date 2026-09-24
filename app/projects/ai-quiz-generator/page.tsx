@@ -68,6 +68,7 @@ function FacultyImageCarousel() {
               fill
               className="object-contain"
               priority
+              quality={90}
               sizes="(max-width: 768px) 100vw, 900px"
             />
           </motion.div>
@@ -178,6 +179,7 @@ function FacultyImageCarousel() {
                 alt={images[expandedIndex].alt}
                 fill
                 className="object-contain"
+                quality={90}
                 sizes="90vw"
               />
             </div>
@@ -203,6 +205,7 @@ interface ProcessStep {
   description: string
   image: string
   bullets?: string[]
+  imageHeight?: string
 }
 
 const processSteps: ProcessStep[] = [
@@ -224,8 +227,9 @@ const processSteps: ProcessStep[] = [
     number: 3,
     title: 'Sketches to Prototypes',
     description:
-      'Utilized Figma Make to take sketches to prototypes, leading esign reviews with engineers and clients throughout to align on feasibility and UI direction.',
+      'Turned sketches to prototypes for the faculty and student flow, using Figma Make for rapid prototyping for polish and text generation. Led design reviews with engineers and clients throughout to align on feasibility and UI direction.',
     image: '/projects/aiquiz/quiz-step4.png',
+    imageHeight: 'h-80 md:h-[480px]',
   },
   {
     number: 4,
@@ -300,13 +304,14 @@ function ProcessSection() {
             {/* Image (right on desktop) */}
             <div className={`md:col-span-1 ${idx % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
               <div className="relative group">
-              <div className="relative w-full h-64 md:h-80">
+              <div className={`relative w-full ${step.imageHeight ?? 'h-64 md:h-80'}`}>
                   <Image
                     src={step.image}
                     alt={step.title}
                     fill
                     className="object-contain transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 45vw"
+                    quality={90}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>
@@ -395,10 +400,11 @@ export default function HudlCasePage() {
               <Image
                 src="/projects/aiquiz/quizheader.png"
                 alt="AI quiz platform"
-                width={1920}
-                height={1080}
+                width={2770}
+                height={1684}
                 className="w-full h-auto rounded-lg"
                 priority
+                quality={90}
               />
             </div>
           </div>
@@ -603,6 +609,7 @@ export default function HudlCasePage() {
                 alt="Student quiz screen"
                 fill
                 className="object-contain"
+                quality={90}
                 sizes="(max-width: 768px) 100vw, 900px"
               />
             </div>

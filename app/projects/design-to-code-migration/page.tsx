@@ -196,7 +196,7 @@ export default function HudlCasePage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">design engineering / proof of technology</p>
+              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">design engineering / AI workflow</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
                 Widget Code Refactoring
               </h2>
@@ -295,7 +295,7 @@ export default function HudlCasePage() {
                 items: ['Figma Make designs and export capabilities'],
               },
               {
-                title: 'Workflow Design (with Engineers)',
+                title: 'Workflow Design (with Engineers and Product)',
                 items: ['Diagrammed the conversion flow', 'Designed step-by-step guide for the AI IDE assistant to execute', 'Mapped handoff into the CI/CD pipeline'],
               },
               {

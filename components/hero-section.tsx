@@ -108,7 +108,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <h1 className="fade-up text-5xl md:text-7xl font-bold leading-tight tracking-tight text-balance text-foreground">
+        <h1 className="fade-up relative z-10 text-5xl md:text-7xl font-bold leading-tight tracking-tight text-balance text-foreground">
           Hi! I&apos;m Enya.
           <br />
           <span className="text-muted-foreground font-light">I design clarity</span>
@@ -116,7 +116,7 @@ export function HeroSection() {
           <span className="text-muted-foreground font-light">in complexity.</span>
         </h1>
 
-        <p className="fade-up text-lg text-muted-foreground leading-relaxed text-center">
+        <p className="fade-up relative z-0 text-lg text-muted-foreground leading-relaxed text-center">
           Currently working on <TypewriterWord />
         </p>
 

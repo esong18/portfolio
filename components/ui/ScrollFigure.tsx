@@ -57,7 +57,7 @@ function WhiteboardWord() {
   return (
     <span
       className="font-shantell text-accent relative whitespace-nowrap"
-      style={{ minWidth: '18ch', overflow: 'hidden', alignItems: 'baseline', verticalAlign: 'baseline', justifyContent: 'center' }}
+      style={{ minWidth: '18ch', overflow: 'hidden', alignItems: 'baseline', verticalAlign: 'baseline', justifyContent: 'center', position: 'relative' }}
     >
       {/* Text — revealed on write-in; hold: fully visible; paused: hidden */}
       <span
@@ -73,13 +73,13 @@ function WhiteboardWord() {
         {phrase}
       </span>
 
-      {/* Erase mask — rotates from behind-right to covering-left, hiding the text beneath */}
+      {/* Erase mask — scales from 0→1 horizontally, wiping left-to-right over the text */}
       {isErasing && (
         <span
           aria-hidden="true"
           style={{
             position: 'absolute',
-            inset: '-4px -4px -4px -4px',
+            inset: '0',
             background: 'var(--background)',
             transformOrigin: 'left center',
             animation: `wb-erase-mask ${ERASE_MS}ms linear forwards`,
@@ -89,10 +89,10 @@ function WhiteboardWord() {
       )}
 
       <style>{`
-        /* Erase mask: rotates from flat-behind to flat-over, sweeping across the text */
+        /* Erase mask: scales horizontally left→right across the text */
         @keyframes wb-erase-mask {
-          from { transform: rotate(-80deg); }
-          to   { transform: rotate(10deg);  }
+          from { transform: scaleX(0); }
+          to   { transform: scaleX(1); }
         }
 
         /* Write-in: clip expands left→right, opacity settles from 85%→100% */

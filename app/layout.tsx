@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || 'https://enyasong.com'
   ),
-  title: "Enya Song's Resume",
+  title: 'Enya Song Portfolio',
   description:
     "Hi, I'm Enya! I design products with people at the heart of them",
   generator: 'v0.app',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     apple: '/portfoliofavicon.png',
   },
   openGraph: {
-    title: "Enya Song's Resume",
+    title: 'Enya Song Portfolio',
     description:
       "Hi, I'm Enya! I design products with people at the heart of them",
     images: [
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Enya Song's Resume",
+    title: 'Enya Song Portfolio',
     description:
       "Hi, I'm Enya! I design products with people at the heart of them",
     images: ['/coverimage.png'],

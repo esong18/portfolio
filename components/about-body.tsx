@@ -3,11 +3,11 @@
 import { StartingFiveCard } from './starting-five-card'
 
 const photoStrip = [
-  { src: '/hiking.jpeg', alt: 'Hiking outdoors', className: 'w-auto' },
-  { src: '/basketball.JPEG', alt: 'Playing basketball', className: 'w-auto' },
-  { src: '/nails.jpeg', alt: 'Nail art design', className: 'w-auto' },
-  { src: '/vlog.jpg', alt: 'Vlogging / video diary', className: 'aspect-[3/5] object-cover' },
-  { src: '/explore.jpg', alt: 'Exploring and travels', className: 'w-auto' },
+  { src: '/hiking.jpeg', alt: 'Hiking outdoors' },
+  { src: '/basketball.JPEG', alt: 'Playing basketball' },
+  { src: '/nails.jpeg', alt: 'Nail art design' },
+  { src: '/vlog.jpg', alt: 'Vlogging / video diary' },
+  // { src: '/explore.jpg', alt: 'Exploring and travels' },
 ]
 
 export function AboutBody() {
@@ -42,13 +42,13 @@ export function AboutBody() {
           </h2>
 
           {/* Photo strip */}
-          <div className="flex flex-nowrap items-center gap-2 sm:gap-3 justify-start mb-6 overflow-x-auto no-scrollbar">
+          <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-6 w-full">
             {photoStrip.map((photo, index) => (
               <img
                 key={index}
                 src={photo.src}
                 alt={photo.alt}
-                className={`h-[140px] sm:h-[155px] md:h-[165px] rounded-xl border border-border/60 shadow-sm flex-shrink-0 ${photo.className || 'w-auto object-contain'}`}
+                className="w-full aspect-[3/4] object-cover rounded-xl border border-border/60 shadow-sm"
               />
             ))}
           </div>

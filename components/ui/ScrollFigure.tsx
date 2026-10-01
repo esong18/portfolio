@@ -57,13 +57,14 @@ function WhiteboardWord() {
   return (
     <span
       className="font-shantell text-accent relative inline-flex"
-      style={{ minWidth: '18ch', overflow: 'hidden', alignItems: 'baseline', verticalAlign: 'baseline' }}
+      style={{ minWidth: '18ch', overflow: 'hidden', alignItems: 'baseline', verticalAlign: 'baseline', justifyContent: 'center' }}
     >
       {/* Text — revealed on write-in; hold: fully visible; paused: hidden */}
       <span
         style={{
           display: 'inline-block',
           whiteSpace: 'nowrap',
+          textAlign: 'center',
           clipPath:  isHold ? 'inset(0 0% 0 0)' : undefined,
           opacity:   phase === 'paused' ? 0 : 1,
           animation: isWriting ? `wb-write ${WRITE_MS}ms cubic-bezier(0.4,0,0.15,1) forwards` : undefined,
@@ -382,8 +383,9 @@ export function ScrollFigure() {
                 I design <em className="not-italic text-accent">clarity</em> in complexity.
               </span>
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              Currently working on <WhiteboardWord />
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed flex flex-wrap items-center justify-center gap-x-1.5">
+              <span>Currently working on</span>
+              <WhiteboardWord />
             </p>
           </div>
         </div>

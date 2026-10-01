@@ -116,7 +116,7 @@ function ProcessSection() {
             {/* Image (right on desktop) */}
             <div className={`md:col-span-1 ${idx % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
               <div className="relative group">
-              <div className="relative w-full h-64 md:h-80">
+                <div className="relative w-full h-64 md:h-80 ml-12 md:ml-0">
                   <Image
                     src={step.image}
                     alt={step.title}

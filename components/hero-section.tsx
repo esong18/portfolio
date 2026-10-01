@@ -116,8 +116,8 @@ export function HeroSection() {
           <span className="text-muted-foreground font-light">in complexity.</span>
         </h1>
 
-        <p className="fade-up text-lg text-muted-foreground leading-relaxed">
-          Currently working on{' '}
+        <p className="fade-up text-lg text-muted-foreground leading-relaxed flex flex-wrap items-center justify-center gap-x-1.5">
+          <span>Currently working on</span>
           <TypewriterWord />
         </p>
 

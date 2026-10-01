@@ -27,14 +27,34 @@ const shantellSans = Shantell_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Enya Song Portfolio',
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://enyasong.com'
+  ),
+  title: "Enya Song's Resume",
   description:
-    'Portfolio of Enya Song, a product designer.',
+    "Hi, I'm Enya! I design products with people at the heart of them",
   generator: 'v0.app',
   icons: {
     icon: '/portfoliofavicon.png',
     shortcut: '/portfoliofavicon.png',
     apple: '/portfoliofavicon.png',
+  },
+  openGraph: {
+    title: "Enya Song's Resume",
+    description:
+      "Hi, I'm Enya! I design products with people at the heart of them",
+    images: [
+      {
+        url: '/coverimage.png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Enya Song's Resume",
+    description:
+      "Hi, I'm Enya! I design products with people at the heart of them",
+    images: ['/coverimage.png'],
   },
 }
 

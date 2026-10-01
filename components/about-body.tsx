@@ -42,13 +42,13 @@ export function AboutBody() {
           </h2>
 
           {/* Photo strip */}
-          <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-6 w-full">
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5 mb-6">
             {photoStrip.map((photo, index) => (
               <img
                 key={index}
                 src={photo.src}
                 alt={photo.alt}
-                className="w-full aspect-[3/4] object-cover rounded-xl border border-border/60 shadow-sm"
+                className="w-full aspect-[2/3] object-cover rounded-[14px] border border-border/60 shadow-sm"
               />
             ))}
           </div>

@@ -32,12 +32,12 @@ function TypewriterWord() {
     return () => clearTimeout(timeout)
   }, [displayed, deleting, index])
 
-  return (
-    <span className="inline-flex items-center gap-0.5 text-accent font-medium">
-      {displayed}
-      <span className="animate-pulse">|</span>
-    </span>
-  )
+    return (
+      <span className="whitespace-nowrap text-accent font-medium">
+        {displayed}
+        <span className="animate-pulse">|</span>
+      </span>
+    )
 }
 
 export function HeroSection() {
@@ -116,9 +116,8 @@ export function HeroSection() {
           <span className="text-muted-foreground font-light">in complexity.</span>
         </h1>
 
-        <p className="fade-up text-lg text-muted-foreground leading-relaxed flex flex-wrap items-center justify-center gap-x-1.5">
-          <span>Currently working on</span>
-          <TypewriterWord />
+        <p className="fade-up text-lg text-muted-foreground leading-relaxed text-center">
+          Currently working on <TypewriterWord />
         </p>
 
         <a

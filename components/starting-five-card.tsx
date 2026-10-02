@@ -20,7 +20,7 @@ const players: Player[] = [
     posColor: "#534AB7",
     posBg: "#EEEDFE",
     name: "Boba",
-    trait: "The floor general",
+    trait: "The captain",
     clutch: "99%",
     color: "#D4537E",
     report: "Unmatched versatility. Guaranteed to lift the whole team's morale the second she checks in.",
@@ -101,7 +101,7 @@ const players: Player[] = [
     trait: "The anchor",
     clutch: "100%",
     color: "#185FA5",
-    report: "The franchise player. Been here since day one. When she's off, the whole team suffers. Non-negotiable starting spot. Plays better with water.",
+    report: "The franchise player. Been here since day one. When she's off, the whole team suffers. Non-negotiable starting spot.",
     icon: (
       <svg className="s5-drink-icon mx-auto mb-2" width="34" height="38" viewBox="0 0 36 40">
         <rect x="4" y="14" width="22" height="20" rx="4" fill="#E6F1FB" stroke="#378ADD" strokeWidth="1.5"/>
@@ -183,7 +183,7 @@ export function StartingFiveCard() {
           On the bench
         </div>
         <div className="flex gap-2 flex-wrap">
-          {['Diet Coke', 'Hojicha', 'Sparkling Water',].map((drink, i) => (
+          {['Diet Coke', 'Hojicha', 'Sparkling Water (flavored)',].map((drink, i) => (
             <div
               key={i}
               className="bg-white border border-[#e8e4dc] rounded-full px-3.5 py-1 text-xs text-[#888]"

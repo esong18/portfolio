@@ -3,11 +3,11 @@
 import { StartingFiveCard } from './starting-five-card'
 
 const photoStrip = [
-  { src: '/hiking.jpeg', alt: 'Hiking outdoors' },
-  { src: '/basketball.JPEG', alt: 'Playing basketball' },
-  { src: '/nails.jpeg', alt: 'Nail art design' },
-  { src: '/vlog.jpg', alt: 'Vlogging / video diary' },
-  // { src: '/explore.jpg', alt: 'Exploring and travels' },
+  { src: '/hiking.jpeg', alt: 'Hiking outdoors', className: 'w-auto' },
+  { src: '/basketball.JPEG', alt: 'Playing basketball', className: 'w-auto' },
+  { src: '/nails.jpeg', alt: 'Nail art design', className: 'w-auto' },
+  { src: '/vlog.jpg', alt: 'Vlogging / video diary', className: 'aspect-[3/5] object-cover' },
+  // { src: '/explore.jpg', alt: 'Exploring and travels', className: 'w-auto' },
 ]
 
 export function AboutBody() {
@@ -42,20 +42,20 @@ export function AboutBody() {
           </h2>
 
           {/* Photo strip */}
-          <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5 mb-6">
+          <div className="flex flex-nowrap items-center gap-2 sm:gap-3 justify-start mb-6 overflow-x-auto no-scrollbar">
             {photoStrip.map((photo, index) => (
               <img
                 key={index}
                 src={photo.src}
                 alt={photo.alt}
-                className="w-full aspect-[2/3] object-cover rounded-[14px] border border-border/60 shadow-sm"
+                className={`h-[140px] sm:h-[155px] md:h-[165px] rounded-xl border border-border/60 shadow-sm flex-shrink-0 ${photo.className || 'w-auto object-contain'}`}
               />
             ))}
           </div>
 
           <div className="space-y-4">
             <p className="text-base text-foreground/80 leading-relaxed">
-              You can find me eating my way through the city, exploring the mountains, or spending my evening as a hobbyist nail artist. Occasionally I&apos;ll play an aggressively average game of basketball and document my memories in video diaries. 📸
+              You can find me eating my way through the city, hiking a mountain, or spending my evening as a hobbyist nail artist. Occasionally I&apos;ll play an aggressively average game of basketball and document my memories in video diaries. 📸
             </p>
             <p className="text-base text-foreground/80 leading-relaxed">
                I&apos;m also never far from a fun drink. Check out my scouting report below…

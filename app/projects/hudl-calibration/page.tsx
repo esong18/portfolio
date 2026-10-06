@@ -509,7 +509,7 @@ export default function HudlCasePage() {
               <br /><br />
               The fact that you know where you&apos;re plotting it — you&apos;re not guessing which pin goes where. You know exactly where you need to find it.&rdquo;
             </p>
-            <p className="text-xs text-muted-foreground">Adam Hunter, Boys Academy Director at Century United</p>
+            <p className="text-xs text-muted-foreground">- Boys Academy Director at Century United</p>
           </motion.div>
         </div>
       </section>

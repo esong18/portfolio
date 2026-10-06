@@ -9,7 +9,7 @@ const projects = [
     title: 'Medical AI Quiz Generator',
     description:
       'Assist faculty members with creating quiz questions through AI generation.',
-    tags: ['Workshop Facilitation', 'Prototypes', 'Business Strategy'],
+    tags: ['Workshop Facilitation', 'Human-in-the-loop AI', 'Edtech'],
     image: '/projects/aiquiz/quizcover.png',
     note: '0 → 1 ',
     slug: 'ai-quiz-generator',
@@ -18,7 +18,7 @@ const projects = [
     title: 'BuildMySkincare',
     description:
       'Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.',
-    tags: ['Design Systems', 'Web', 'Figma Make'],
+    tags: ['Design Systems', 'Web', 'Personalization'],
     image: '/projects/Skincare/skincover.png',
     note: 'AI prototyping',
     slug: 'skin-analysis',
@@ -27,7 +27,7 @@ const projects = [
     title: 'Hudl Calibration Redesign',
     description:
       'Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.',
-    tags: ['Product Design', 'Design Systems', 'A/B Testing'],
+    tags: ['UI Redesign', 'AI/ML Experience', 'A/B Testing'],
     image: '/projects/Hudl/hudlcover.png',
     note: 'shipped to production',
     slug: 'hudl-calibration',

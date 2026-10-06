@@ -383,7 +383,7 @@ export default function HudlCasePage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">web design</p>
+              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">product design / self-initiated</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
                 Skincare, Simplified
               </h2>
@@ -555,7 +555,7 @@ export default function HudlCasePage() {
                 description: 'After a short quiz, the app curates a routine based on user concerns and climate—offering clear direction in an otherwise overwhelming product landscape.',
               },
               {
-                title: 'Ingredient Compatability Analysis (Slide 3-4)',
+                title: 'Ingredient Compatibility Analysis (Slide 3-4)',
                 description: 'Because some ingredients enhance absorption while others conflict, the compatibility analysis shows users how their specific routine performs.',
               },
               {

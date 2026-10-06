@@ -61,7 +61,7 @@ const processSteps: ProcessStep[] = [
     number: 4,
     title: 'A/B User Testing',
     description: [
-      'The testing focused on two scenarios: one where the user plotted two pins at a time (half the field at once), and the other scenario where the user plots one point at a time. I led the testing interviews for 10 beta users.',
+      'The testing focused on two scenarios: one where the user plotted two pins at a time (half the field at once), and the other scenario where the user plots one point at a time. I led the testing interviews for 10 beta users, and results showed users preferred one-pin-at-a-time. This is the version existing in the app today.',
     ],
     image: '/projects/Hudl/hudl-process-step4.png',
   },
@@ -221,7 +221,7 @@ export default function HudlCasePage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">mobile design</p>
+              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">mobile product design / shipped</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
                 A New Calibration Experience
               </h2>

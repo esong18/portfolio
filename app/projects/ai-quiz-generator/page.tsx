@@ -235,7 +235,7 @@ const processSteps: ProcessStep[] = [
     number: 4,
     title: 'Engineer Hand Off',
     description:
-      'Coordinated with a front-end developer to turn the designs into production production-ready code. Worked with AI engineers to connect the front end to the back end (an AI model served through FastAPI endpoints that generated the quiz questions).',
+      'Coordinated with a front-end developer to turn the designs into production-ready code. Worked with AI engineers to connect the front end to the back end (an AI model served through FastAPI endpoints that generated the quiz questions).',
     image: '/projects/aiquiz/student.png',
   },
 ]
@@ -385,7 +385,7 @@ export default function HudlCasePage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4">web design / proof of technology</p>
+              <p className="font-handwritten text-accent/70 text-base md:text-lg mb-4 pt-4"> 0→1 / ai product design</p>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-3xl mx-auto mb-4">
                 Quiz Question Generator
               </h2>

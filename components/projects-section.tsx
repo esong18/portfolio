@@ -20,7 +20,7 @@ const projects = [
       'Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.',
     tags: ['Design Systems', 'Web', 'Personalization'],
     image: '/projects/Skincare/skincover.png',
-    note: 'AI prototyping',
+    note: 'self-initiated',
     slug: 'skin-analysis',
   },
   {

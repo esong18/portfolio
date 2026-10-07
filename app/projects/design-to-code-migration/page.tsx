@@ -26,7 +26,7 @@ const processSteps: ProcessStep[] = [
     number: 1,
     title: 'Client Discovery',
     description:
-      'Interviewed the client to understand their vision for an enterprise-wide widget library and the challenges of refactoring widgets manually.',
+      'Interviewed the client to understand their vision for an enterprise-wide widget library and the challenges of refactoring widgets manually. Also designed mock widgets for demonstration in Figma Make to generate React code.',
     image: '/projects/design-to-code/Dashboard.png',
   },
   {
@@ -291,7 +291,7 @@ export default function HudlCasePage() {
           >
             {[
               {
-                title: 'Technical Discovery',
+                title: 'Figma Designs',
                 items: ['Figma Make designs and export capabilities'],
               },
               {

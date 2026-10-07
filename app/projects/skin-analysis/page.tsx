@@ -237,6 +237,13 @@ const processSteps: ProcessStep[] = [
       'I used Figma Make to raise the fidelity of my wireframes and fill in placeholder text, while keeping the design decisions my own. I then tested the concept with three potential users, including a dermatology nurse. The nurse stressed that compatibility information should link to its sources, or even carry professional approval, so users can trust it. Testers also flagged too many buttons and a skin type quiz too simplified for people unsure of their type.',
     image: '/projects/Skincare/skin-step4.png',
   },
+    {
+    number: 5,
+    title: 'Coming Soon',
+    description:
+      'Now in development to bring the idea to life...',
+    image: '',
+  },
 ]
 
 function ProcessSection() {

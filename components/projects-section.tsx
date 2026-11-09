@@ -8,39 +8,39 @@ const projects = [
   {
     title: 'Medical AI Quiz Generator',
     description:
-      'Assist faculty members with creating quiz questions through AI generation.',
-    tags: ['Workshop Facilitation', 'Human-in-the-loop AI', 'Edtech'],
+      'AI quiz generator that helps medical faculty quiz students on core concepts. Took design from discovery to a working build that anchored a grant application for a school-wide rollout.',
+    tags: ['Sketches to Prototypes', 'Human-in-the-loop AI', 'Design Systems'],
     image: '/projects/aiquiz/quizcover.png',
-    note: '0 → 1 ',
+    note: '0 → 1 design',
     slug: 'ai-quiz-generator',
   },
   {
     title: 'BuildMySkincare',
     description:
-      'Created a webpage that analyzes skincare routines, recommends personalized routines, and showcases community routines.',
-    tags: ['Design Systems', 'Web', 'Personalization'],
+      'Designed and coded a web app that analyzes product compatability in a skincare routine, built on its own accessible design system.',
+    tags: ['Design tokens', 'Cursor + React/Next.js', 'Personalization'],
     image: '/projects/Skincare/skincover.png',
-    note: 'self-initiated',
+    note: 'self-initiated design and development',
     slug: 'skin-analysis',
   },
   {
     title: 'Hudl Calibration Redesign',
     description:
-      'Redesigned a streamlined experience when manually calibrating the Focus Flex Camera on the Hudl app.',
-    tags: ['UI Redesign', 'AI/ML Experience', 'A/B Testing'],
+      'Redesigned a guided mobile flow that replaced an existing manual fallback for ML camera calibration, now live in the Hudl app.',
+    tags: ['UI Redesign', 'A/B Testing', 'Shipped to production',],
     image: '/projects/Hudl/hudlcover.png',
     note: 'shipped to production',
     slug: 'hudl-calibration',
   },  
-  {
-    title: 'Design to Code Migration',
-    description:
-      'Migrating design assets from Figma into a modern codebase.',
-    tags: ['Workflow Planning', 'IDE AI Assistant', 'Figma to Code'],
-    image: '/projects/design-to-code/codecover.png',
-    note: 'react to angular widget builder',
-    slug: 'design-to-code-migration',
-  },
+  // {
+  //   title: 'Design to Code Migration',
+  //   description:
+  //     'A design-to-code workflow built on Figma MCP and IBM Bob (an agentic AI IDE) that lets designers and developers read, edit and generate code straight from Figma, covering everything from React prototypes to Angular builds.',
+  //   tags: ['Workflow Planning', 'IDE AI Assistant', 'Figma to Code'],
+  //   image: '/projects/design-to-code/codecover.png',
+  //   note: 'AI IDE workflow',
+  //   slug: 'design-to-code-migration',
+  // },
   // {
   //   title: 'Disaster Recovery Assistant',
   //   description:

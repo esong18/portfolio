@@ -20,7 +20,7 @@ export function Footer() {
             {[
               { label: 'LinkedIn', href: 'https://www.linkedin.com/in/enyasong/' },
               { label: 'Email', href: 'mailto:esong4318@gmail.com' },
-              { label: 'Resume', href: '/EnyaSong-Resume.pdf' },
+              { label: 'Resume', href: '/Enya_Song_Resume.pdf' },
             ].map((link) => (
               <li key={link.label}>
                 <a

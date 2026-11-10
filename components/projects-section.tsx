@@ -27,7 +27,7 @@ const projects = [
     title: 'Hudl Calibration Redesign',
     description:
       'Redesigned a guided mobile flow that replaced an existing manual fallback for ML camera calibration, now live in the Hudl app.',
-    tags: ['UI Redesign', 'A/B Testing', 'Shipped to production',],
+    tags: ['UI Redesign', 'A/B Testing', 'Live in App',],
     image: '/projects/Hudl/hudlcover.png',
     note: 'shipped to production',
     slug: 'hudl-calibration',
